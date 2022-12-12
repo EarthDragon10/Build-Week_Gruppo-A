@@ -5,16 +5,45 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Musicalità</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            
+            <nav class="navbar navbar-expand-lg bg-light">
+               
+                <div class="container">
+                     <a class="navbar-brand" href="Default.aspx">Musicalità</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="#">Stratocaster</a>
+                            <a class="nav-link" href="#">Stratocaster</a>
+                            <a class="nav-link" href="#">Stratocaster</a>
+                            <a class="nav-link" href="#">Stratocaster</a>
+                        </div>
+                    </div>
+                    🛒
+                </div>
+            </nav>
+
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+            <div class="container">
+                <footer class="text-center py-3 my-4 border-top">
+                     <span class=" text-muted text-center">© Dicembre 2022 - Giuseppe Di Pisa, Bruno Stano, Stefano Laguda, Nicola Lerra, Luigi Indaco</span>
+                </footer>
+            </div>
         </div>
     </form>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>
