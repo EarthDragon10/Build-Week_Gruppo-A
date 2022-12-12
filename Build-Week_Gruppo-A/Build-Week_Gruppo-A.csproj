@@ -90,6 +90,7 @@
     <Content Include="DettaglioProdotto.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="ProdottiPerCategoria.aspx" />
     <Content Include="Registrazione.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="Navbar_Footer.Master.designer.cs">
       <DependentUpon>Navbar_Footer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ProdottiPerCategoria.aspx.cs">
+      <DependentUpon>ProdottiPerCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdottiPerCategoria.aspx.designer.cs">
+      <DependentUpon>ProdottiPerCategoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Prodotto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
