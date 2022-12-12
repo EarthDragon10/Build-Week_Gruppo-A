@@ -74,9 +74,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Navbar_Footer.Master.cs">
+      <DependentUpon>Navbar_Footer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Navbar_Footer.Master.designer.cs">
+      <DependentUpon>Navbar_Footer.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Navbar_Footer.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
