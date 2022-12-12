@@ -71,7 +71,10 @@
     <Content Include="admin\ListaProdotti.aspx" />
     <Content Include="Carrello.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DettaglioProdotto.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registrazione.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -103,8 +106,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DettaglioProdotto.aspx.cs">
+      <DependentUpon>DettaglioProdotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DettaglioProdotto.aspx.designer.cs">
+      <DependentUpon>DettaglioProdotto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Navbar_Footer.Master.cs">
       <DependentUpon>Navbar_Footer.Master</DependentUpon>
@@ -113,6 +130,13 @@
       <DependentUpon>Navbar_Footer.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrazione.aspx.cs">
+      <DependentUpon>Registrazione.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrazione.aspx.designer.cs">
+      <DependentUpon>Registrazione.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Navbar_Footer.Master" />
