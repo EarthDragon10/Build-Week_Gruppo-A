@@ -67,10 +67,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AggiungiProdotto.aspx" />
+    <Content Include="admin\ListaProdotti.aspx" />
+    <Content Include="Carrello.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AggiungiProdotto.aspx.cs">
+      <DependentUpon>AggiungiProdotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AggiungiProdotto.aspx.designer.cs">
+      <DependentUpon>AggiungiProdotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ListaProdotti.aspx.cs">
+      <DependentUpon>ListaProdotti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ListaProdotti.aspx.designer.cs">
+      <DependentUpon>ListaProdotti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrello.aspx.cs">
+      <DependentUpon>Carrello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrello.aspx.designer.cs">
+      <DependentUpon>Carrello.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -84,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Navbar_Footer.Master" />
+    <Content Include="admin\Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
