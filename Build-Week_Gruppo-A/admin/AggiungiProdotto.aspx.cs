@@ -14,7 +14,9 @@ namespace Build_Week_Gruppo_A.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
+            if (!IsPostBack) {
+
+
                 SqlConnection connessioneDB = new SqlConnection();
                 connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
                 connessioneDB.Open();
@@ -35,9 +37,44 @@ namespace Build_Week_Gruppo_A.admin
                         listitem_categoria.Text = c;
                         listitem_categoria.Value = id;
                         DropDownList_Categoria.Items.Add(listitem_categoria);
-                    
+
                     }
                 }
+
+                connessioneDB.Close();
+
+                if (Request.QueryString["IdProdotto"] != null)
+                {   string idQuery = Request.QueryString["IdProdotto"];
+
+                    SqlConnection connessioneDBModifica = new SqlConnection();
+                    connessioneDBModifica.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                    connessioneDBModifica.Open();
+
+                    SqlCommand commandModifica = new SqlCommand();
+                    commandModifica.CommandText = $"SELECT * FROM Categoria INNER JOIN Prodotto ON Prodotto.ID_Categoria = Categoria.ID_Categoria" +
+                                                  $" WHERE Prodotto.ID_Prodotto = {idQuery} ";
+                    commandModifica.Connection = connessioneDBModifica;
+
+                    SqlDataReader readerModifica = commandModifica.ExecuteReader();
+
+                    if (readerModifica.HasRows)
+                    {
+                        while (readerModifica.Read())
+                        {
+                            TEXTBOX_Marca.Text = readerModifica["Marca"].ToString();
+                            TEXTBOX_Modello.Text = readerModifica["Modello"].ToString();
+                            TEXTBOX_Descrizione.Text = readerModifica["Descrizione"].ToString();
+                            TEXTBOX_PrezzoVendita.Text = readerModifica["PrezzoVendita"].ToString();
+                            CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
+                            TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
+                            FileUpload_Image.GetRouteUrl(readerModifica["URLImg"]);
+                            
+                        }
+                    }
+
+
+                }
+
                 connessioneDB.Close();
             }
 
@@ -76,6 +113,7 @@ namespace Build_Week_Gruppo_A.admin
                 command.Parameters.AddWithValue("@URLImg", FileUpload_Image.FileName);
 
                 command.Parameters.AddWithValue("@PrezzoVendita", TEXTBOX_PrezzoVendita.Text);
+                
                 command.Parameters.AddWithValue("@PrezzoPrecedente", TEXTBOX_PrezzoPrecedente.Text);
 
                 command.Parameters.AddWithValue("@InPromozione", CheckBox_InPromozione.Checked);

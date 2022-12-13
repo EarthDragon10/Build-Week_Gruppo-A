@@ -7,7 +7,8 @@
             <asp:BoundField DataField="Marca" HeaderText="Marca"  />
             <asp:BoundField DataField="Modello" HeaderText="Modello" />
             <asp:BoundField DataField="PrezzoVendita" HeaderText="Prezzo al pubblico" DataFormatString="{0:C}" />
-            <asp:BoundField DataField="InPromozione" HeaderText="In Promozione" />
+            <asp:CheckBoxField runat="server" DataField="InPromozione" HeaderText="In Promozione"></asp:CheckBoxField>
+            <asp:BoundField DataField="Tipologia" HeaderText="Categoria"/>
             <asp:TemplateField>
                 
                 <ItemTemplate>

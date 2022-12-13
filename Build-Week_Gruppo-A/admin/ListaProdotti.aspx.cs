@@ -43,6 +43,8 @@ namespace Build_Week_Gruppo_A.admin
                             prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
                             prodottoAdmin.PrezzoVendita = Convert.ToInt32(prodottiTable["PrezzoVendita"]);
                             prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
+                            prodottoAdmin.Tipologia = prodottiTable["Tipologia"].ToString();
+                            
 
 
                             ListaProdottiAdmin.Add(prodottoAdmin);

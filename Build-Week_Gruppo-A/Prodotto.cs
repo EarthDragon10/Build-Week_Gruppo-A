@@ -16,6 +16,7 @@ namespace Build_Week_Gruppo_A
         public string Descrizione { get; set; }
         public bool InPromozione { get; set; }
         public int ID_Categoria { get; set; }
+        public string Tipologia { get; set; }
 
         public static List<Prodotto> ListaProdotti = new List<Prodotto>();
 
