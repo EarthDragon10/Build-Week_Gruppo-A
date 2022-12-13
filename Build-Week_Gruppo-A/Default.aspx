@@ -7,6 +7,7 @@
             <ItemTemplate>
                 <%# Item.ID_Prodotto %>
                 <%# Item.Marca %>
+                <%# Item.Modello %>
             </ItemTemplate>
         </asp:Repeater>
     </div>
