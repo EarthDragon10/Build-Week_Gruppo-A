@@ -66,8 +66,9 @@ namespace Build_Week_Gruppo_A.admin
                             TEXTBOX_Descrizione.Text = readerModifica["Descrizione"].ToString();
                             TEXTBOX_PrezzoVendita.Text = readerModifica["PrezzoVendita"].ToString();
                             CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
-                            DropDownList_Categoria.SelectedValue = readerModifica
+                            DropDownList_Categoria.SelectedValue = readerModifica["ID_Categoria"].ToString();
                             TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
+
                             
                             
                         }
