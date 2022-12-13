@@ -14,38 +14,66 @@ namespace Build_Week_Gruppo_A.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection connessioneDB = new SqlConnection();
-            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
-            try
+            if (!IsPostBack)
             {
-                connessioneDB.Open();
 
-                SqlDataAdapter sqlDataGrid = new SqlDataAdapter(@"SELECT Marca, Modello, PrezzoVendita, InPromozione, Tipologia FROM Prodotto
+
+                List<Prodotto> ListaProdottiAdmin = new List<Prodotto>();
+                SqlConnection connessioneDB = new SqlConnection();
+                connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                try
+                {
+                    connessioneDB.Open();
+                    SqlCommand commandGrid = new SqlCommand(@"SELECT *  FROM Prodotto
                                                                 INNER JOIN
                                                                 Categoria ON
                                                                 Prodotto.ID_Categoria = Categoria.ID_Categoria", connessioneDB);
 
-                DataTable prodottiTable = new DataTable();
-                sqlDataGrid.Fill(prodottiTable);
 
-                GridView_ListaProdotti.DataSource = prodottiTable;
-                GridView_ListaProdotti.DataBind();
+
+                    SqlDataReader prodottiTable = commandGrid.ExecuteReader();
+
+                    if (prodottiTable.HasRows)
+                    {
+                        while (prodottiTable.Read())
+                        {
+                            Prodotto prodottoAdmin = new Prodotto();
+                            prodottoAdmin.ID_Prodotto = Convert.ToInt32(prodottiTable["ID_Prodotto"]);
+                            prodottoAdmin.Marca = prodottiTable["Marca"].ToString();
+                            prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
+                            prodottoAdmin.PrezzoVendita = Convert.ToInt32(prodottiTable["PrezzoVendita"]);
+                            prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
+
+
+                            ListaProdottiAdmin.Add(prodottoAdmin);
+                        }
+                    }
+
+
+
+
+
+                    GridView_ListaProdotti.DataSource = ListaProdottiAdmin;
+                    GridView_ListaProdotti.DataBind();
+                }
+                catch { }
+
+
+
+                connessioneDB.Close();
             }
-            catch { }
-
-            
-
-            connessioneDB.Close();
 
     
 
 
         }
 
-    
-
-        protected void Button_EliminaProdotto_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            Button ModificaProdotto = (Button)sender;
+            int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
+
+            Response.Redirect($"./AggiungiProdotto.aspx?IdProdotto={idProdotto}");
 
         }
     }
