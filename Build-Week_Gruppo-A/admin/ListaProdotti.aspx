@@ -7,17 +7,18 @@
             <asp:BoundField DataField="Marca" HeaderText="Marca"  />
             <asp:BoundField DataField="Modello" HeaderText="Modello" />
             <asp:BoundField DataField="PrezzoVendita" HeaderText="Prezzo al pubblico" DataFormatString="{0:C}" />
-            <asp:BoundField DataField="Tipologia" HeaderText="Categoria" />
             <asp:BoundField DataField="InPromozione" HeaderText="In Promozione" />
             <asp:TemplateField>
+                
                 <ItemTemplate>
-                    <%--<asp:Button  CssClass="btn btn-warning" ID="Button_ModificaProdotto" runat="server" Text="Modifica" OnClick="Button_ModificaProdotto_Click" />--%>
-                    <asp:LinkButton ID="LinkButton1" runat="server">LinkButton</asp:LinkButton>
-                    <asp:Button CssClass="btn btn-danger" ID="Button_EliminaProdotto" runat="server" Text="Elimina" OnClick="Button_EliminaProdotto_Click" />
+                     
+                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
+                    <asp:Button ID="Button2" runat="server" Text="Button" />
                 </ItemTemplate>
             </asp:TemplateField>
 
         </Columns>
 
     </asp:GridView>
+
 </asp:Content>
