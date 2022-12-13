@@ -68,6 +68,7 @@ namespace Build_Week_Gruppo_A.admin
                             CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
                             DropDownList_Categoria.SelectedValue = readerModifica["ID_Categoria"].ToString();
                             TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
+                            Label_Immagine.Text = readerModifica["URLIMG"].ToString();
 
                             
                             
@@ -153,8 +154,63 @@ namespace Build_Week_Gruppo_A.admin
             }
         }
 
-        protected void Button_ModificaProdotto_Click(object sender, EventArgs e)
+        protected void Button_ModificaProdotto_Click (object sender, EventArgs e)
         {
+            
+            string idQueryModifica = Request.QueryString["IdProdotto"];
+            try
+            {
+
+
+                SqlConnection connessioneDB = new SqlConnection();
+                connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                connessioneDB.Open();
+
+                SqlCommand command = new SqlCommand();
+
+
+                command.Parameters.AddWithValue("@Marca", TEXTBOX_Marca.Text);
+                command.Parameters.AddWithValue("@Modello", TEXTBOX_Modello.Text);
+                command.Parameters.AddWithValue("@Descrizione", TEXTBOX_Descrizione.Text);
+
+                if (FileUpload_Image.HasFile)
+                {
+                    FileUpload_Image.SaveAs(Server.MapPath($"/img/{FileUpload_Image.FileName}"));
+                    command.Parameters.AddWithValue("@URLImg", FileUpload_Image.FileName);
+                }
+
+                command.Parameters.AddWithValue("@PrezzoVendita", TEXTBOX_PrezzoVendita.Text);
+
+                command.Parameters.AddWithValue("@PrezzoPrecedente", TEXTBOX_PrezzoPrecedente.Text);
+
+                command.Parameters.AddWithValue("@InPromozione", CheckBox_InPromozione.Checked);
+
+                command.Parameters.AddWithValue("@ID_Categoria", DropDownList_Categoria.SelectedItem.Value);
+
+                command.CommandText = $"UPDATE Prodotto SET (@Marca = Marca, @Descrizione = Descrizione, @Modello = Modello, @URLImg = URLImg," +
+                    $" @PrezzoVendita = PrezzoVendita, @PrezzoPrecedente = PrezzoPrecedente, @InPromozione = InPromozione, @ID_Categoria = ID_Categoria) WHERE ID_Prodotto = {idQueryModifica}";
+                command.Connection = connessioneDB;
+                command.ExecuteNonQuery();
+                connessioneDB.Close();
+
+            } catch(Exception ex)
+            {
+                Label_RigheInteressate.Text = ex.Message;
+            }
+
+
+            
+
+            //if (righeInteressate > 0)
+            //{
+            //    Label_RigheInteressate.Text = "Aggiornamento effettuato sul cesso.";
+            //}
+            //else
+            //{
+            //    Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+            //}
+
+
 
         }
     }
