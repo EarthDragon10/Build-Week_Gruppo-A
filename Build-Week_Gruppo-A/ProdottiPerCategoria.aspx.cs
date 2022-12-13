@@ -50,8 +50,8 @@ namespace Build_Week_Gruppo_A
             //    REPEATER_SelectAllFromCategoria.DataSource = Prodotto.ListaProdotti;
             //    REPEATER_SelectAllFromCategoria.DataBind();
 
-                //connessioneDB.Close();
-            }
-        }
+            //connessioneDB.Close();
+        
+    }
     }
 }
