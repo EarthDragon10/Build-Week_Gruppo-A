@@ -15,18 +15,20 @@
 
 
                         <div class="col-2">
+                            <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>"> 
                             <asp:Image CssClass="widthImg" ImageUrl='<%#"~/img/"  + Item.URLImg %>' runat="server" />
+                            </a>
                         </div>
                         
                        
                         <div class="col-10">
                             <h2><%#Item.Marca %></h2>
                             <p><%#Item.Modello %></p>
-                            <p>Prezzo: <%#Item.PrezzoVendita %> $</p>
+                            <p>Prezzo: <%#Item.PrezzoVendita.ToString("c2") %> </p>
 
                             <asp:Label Text='<%# "In Offerta! Prezzo precedente = " + Item.PrezzoPrecedente %>' ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" />
 
-                            <asp:Button ID="Button_DettagliProdotto" OnClick="Button_DettagliProdotto_Click" runat="server" CssClass="btn btn-warning" Text="Dettagli" />
+                            <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>" class="btn btn-primary"> Dettagli Prodotto </a>
                             <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" runat="server" CssClass="btn btn-success" Text="Aggiungi al carrello" />
 
                         </div>
