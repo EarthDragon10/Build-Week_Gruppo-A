@@ -13,5 +13,14 @@ namespace Build_Week_Gruppo_A
         {
 
         }
+
+        protected void SelectCategory(object sender, EventArgs e) {
+            prova.Text = "Funziona";
+        }
+
+        protected void IdCategoria_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProdottiPerCategoria.aspx?IdCategoria=1");
+        }
     }
 }
