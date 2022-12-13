@@ -13,42 +13,46 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection connessioneDB = new SqlConnection();
-            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
-            connessioneDB.Open();
 
-            SqlCommand command = new SqlCommand();
-            command.CommandText = "SELECT * FROM Prodotto";
-            command.Connection = connessioneDB;
+            if (!IsPostBack) {
+                Prodotto.ListaProdotti.Clear();
+                SqlConnection connessioneDB = new SqlConnection();
+                connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                connessioneDB.Open();
 
-            SqlDataReader reader = command.ExecuteReader();
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "SELECT * FROM Prodotto";
+                command.Connection = connessioneDB;
 
-            if (reader.HasRows)
-            {
-                while(reader.Read()) 
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
+                    while(reader.Read()) 
+                    {
                     
 
-                    Prodotto p = new Prodotto();
-                    p.ID_Prodotto = Convert.ToInt32(reader["ID_Prodotto"]);
-                    p.Marca = reader["Marca"].ToString();
-                    p.Modello = reader["Modello"].ToString() ;
-                    p.PrezzoVendita = Convert.ToDouble(reader["PrezzoVendita"]);
-                    p.URLImg = reader["URLImg"].ToString();
-                    p.Descrizione = reader["Descrizione"].ToString();
-                    p.InPromozione = Convert.ToBoolean(reader["InPromozione"]);
-                    if (p.InPromozione)
-                    {
-                        p.PrezzoPrecedente = Convert.ToDouble(reader["PrezzoPrecedente"]);
+                        Prodotto p = new Prodotto();
+                        p.ID_Prodotto = Convert.ToInt32(reader["ID_Prodotto"]);
+                        p.Marca = reader["Marca"].ToString();
+                        p.Modello = reader["Modello"].ToString() ;
+                        p.PrezzoVendita = Convert.ToDouble(reader["PrezzoVendita"]);
+                        p.URLImg = reader["URLImg"].ToString();
+                        p.Descrizione = reader["Descrizione"].ToString();
+                        p.InPromozione = Convert.ToBoolean(reader["InPromozione"]);
+                        if (p.InPromozione)
+                        {
+                            p.PrezzoPrecedente = Convert.ToDouble(reader["PrezzoPrecedente"]);
+                        }
+                        p.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
+                        Prodotto.ListaProdotti.Add(p);
                     }
-                    p.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
-                    Prodotto.ListaProdotti.Add(p);
                 }
-            }
-            REPEATER_SelectAllFromProdotto.DataSource = Prodotto.ListaProdotti;
-            REPEATER_SelectAllFromProdotto.DataBind();
+                REPEATER_SelectAllFromProdotto.DataSource = Prodotto.ListaProdotti;
+                REPEATER_SelectAllFromProdotto.DataBind();
 
-            connessioneDB.Close();
+                connessioneDB.Close();
+            }
         }
     }
 }

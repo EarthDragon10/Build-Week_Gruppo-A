@@ -54,4 +54,3 @@ namespace Build_Week_Gruppo_A
             }
         }
     }
-}

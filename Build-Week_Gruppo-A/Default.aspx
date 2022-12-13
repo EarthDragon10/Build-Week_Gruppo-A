@@ -26,6 +26,8 @@
 
                             <asp:Label Text='<%# "In Offerta! Prezzo precedente = " + Item.PrezzoPrecedente %>' ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" />
 
+                            
+
                         </div>
                     </div>
 
