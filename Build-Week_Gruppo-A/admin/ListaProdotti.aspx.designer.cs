@@ -15,12 +15,12 @@ namespace Build_Week_Gruppo_A.admin
     {
 
         /// <summary>
-        /// Controllo GridView_ListaProdottiAdmin.
+        /// Controllo GridView_ListaProdotti.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_ListaProdottiAdmin;
+        protected global::System.Web.UI.WebControls.GridView GridView_ListaProdotti;
     }
 }
