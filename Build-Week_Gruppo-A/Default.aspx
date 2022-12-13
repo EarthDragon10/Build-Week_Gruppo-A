@@ -6,6 +6,8 @@
         <asp:Repeater ID="REPEATER_SelectAllFromProdotto" ItemType="Build_Week_Gruppo_A.Prodotto" runat="server">
             <ItemTemplate>
                 <%# Item.ID_Prodotto %>
+                <%# Item.Marca %>
+                <%# Item.Modello %>
             </ItemTemplate>
         </asp:Repeater>
     </div>
