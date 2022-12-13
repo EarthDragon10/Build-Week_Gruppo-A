@@ -54,5 +54,15 @@ namespace Build_Week_Gruppo_A
                 connessioneDB.Close();
             }
         }
+
+        protected void Button_DettagliProdotto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button_AggiungiCarrello_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

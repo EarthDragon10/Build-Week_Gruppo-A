@@ -26,7 +26,8 @@
 
                             <asp:Label Text='<%# "In Offerta! Prezzo precedente = " + Item.PrezzoPrecedente %>' ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" />
 
-                            
+                            <asp:Button ID="Button_DettagliProdotto" OnClick="Button_DettagliProdotto_Click" runat="server" CssClass="btn btn-warning" Text="Dettagli" />
+                            <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" runat="server" CssClass="btn btn-success" Text="Aggiungi al carrello" />
 
                         </div>
                     </div>
