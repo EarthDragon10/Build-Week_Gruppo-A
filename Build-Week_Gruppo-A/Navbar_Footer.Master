@@ -15,49 +15,55 @@
     <form id="form1" runat="server">
         <div>
 
-            <nav class="navbar navbar-expand-lg bg-light">
+            <img class="img-fluid w-100" style="max-height:130px" src="img/Musicalita.png" />
 
+            <%-- NAVBAR LIGHT DELLA SEARCH BAR  --%>
+
+            <nav class="navbar navbar-expand bg-light">
                 <div class="container">
-                    <div>
-                        <a class="navbar-brand" href="Default.aspx">Musicalità</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                  
-                    <%--<form class="form-inline d-flex">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">                      
-                    </form>--%>    
                     
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                         <%--   <asp:LinkButton CssClass="nav-link" Text="StratoCaster" runat="server" OnClick="IdCategoria_Click" />
-                            <asp:LinkButton CssClass="nav-link" Text="TeleCaster" runat="server" />
-                            <asp:LinkButton CssClass="nav-link" Text="SingleCut" runat="server" />
-                            <asp:LinkButton CssClass="nav-link" Text="Sette Corde" runat="server" />
-                            <asp:LinkButton CssClass="nav-link" Text="Heavy" runat="server" />
-                            <asp:LinkButton CssClass="nav-link" Text="Semi Acustiche" runat="server" />
-                            <asp:LinkButton CssClass="nav-link" Text="Jazz" runat="server" />--%>
+                        <a class="navbar-brand" href="Default.aspx">E-Commerce</a>
+         
+                        <div>
+                            <asp:TextBox CssClass="w-50 form-control" ID="TextBox_CercaChitarra" placeholder="Cerca la tua chitarra preferita"  runat="server"></asp:TextBox>
+                            <asp:Button ID="Button_CercaChitarra" runat="server" OnClick="Button_CercaChitarra_Click" Text="Cerca" />
+                        </div>             
+                    
+                        <asp:Button runat="server" ID="Button_Carrello" CssClass="btn btn-sm btn-outline-secondary" Text="🛒"/>
 
-                            <a class="nav-link" aria-current="page" href="ProdottiPerCategoria.aspx?IdCategoria=1">StratoCaster</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=2">TeleCaster</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=3">SingleCut</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=4">Sette Corde</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=5">Heavy</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=6">Semi Acustiche</a>
-                            <a class="nav-link" href="ProdottiPerCategoria.aspx?IdCategoria=7">Jazz</a>
-                        </div>
-                    </div>
-                    <div>
-                        🛒
-                    </div>
-                    
                 </div>
             </nav>
-            <asp:Label Text="" ID="prova" runat="server" />
+
+            <%-- NAVBAR DARK DELLE CATEGORIE  --%>
+
+             <nav class="navbar navbar-expand-lg bg-dark text-white">
+                <div class="container">
+                  
+                     <div>
+                        <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon text-white"></span>
+                        </button>
+                    </div>
+
+                    <div class="flex-column flex-lg-row align-items-center justify-content-center collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <asp:Repeater ItemType="Build_Week_Gruppo_A.Categoria" ID="Repeater_NavbarCategorie" runat="server">
+                            <ItemTemplate>
+                                <a class="nav-link mx-2" href='ProdottiPerCategoria.aspx?IdCategoria=<%# Item.ID_Categoria %>'><%# Item.Tipologia %></a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+
+                </div>
+            </nav>
+
+
+            <%-- CONTENUTO CONTENTPAGE  --%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
+
+
+            <%-- FOOTER  --%>
             <div class="container">
                 <footer class="text-center py-3 my-4 border-top">
                      <span class=" text-muted text-center">© Dicembre 2022 - Giuseppe Di Pisa, Bruno Stano, Stefano Laguda, Nicola Lerra, Luigi Indaco</span>

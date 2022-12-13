@@ -33,13 +33,40 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controllo prova.
+        /// Controllo TextBox_CercaChitarra.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label prova;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_CercaChitarra;
+
+        /// <summary>
+        /// Controllo Button_CercaChitarra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_CercaChitarra;
+
+        /// <summary>
+        /// Controllo Button_Carrello.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Carrello;
+
+        /// <summary>
+        /// Controllo Repeater_NavbarCategorie.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater_NavbarCategorie;
 
         /// <summary>
         /// Controllo ContentPlaceHolder1.
