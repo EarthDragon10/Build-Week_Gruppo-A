@@ -13,7 +13,7 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (!IsPostBack) {
                 Prodotto.ListaProdotti.Clear();
                 SqlConnection connessioneDB = new SqlConnection();
