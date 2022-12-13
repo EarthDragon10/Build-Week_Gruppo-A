@@ -13,7 +13,7 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack) {
                 Prodotto.ListaProdotti.Clear();
                 SqlConnection connessioneDB = new SqlConnection();
@@ -52,12 +52,14 @@ namespace Build_Week_Gruppo_A
                 REPEATER_SelectAllFromProdotto.DataBind();
 
                 connessioneDB.Close();
+
+
             }
         }
 
         protected void Button_DettagliProdotto_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button_AggiungiCarrello_Click(object sender, EventArgs e)

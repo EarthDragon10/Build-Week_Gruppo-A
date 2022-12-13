@@ -9,24 +9,25 @@ using System.Web.UI.WebControls;
 
 namespace Build_Week_Gruppo_A
 {
-    public partial class DettaglioProdotto : System.Web.UI.Page
+    public partial class BarraDiRicerca : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string IdCategoria = Request.QueryString["IdCategoria"];
+            string Marca = Request.QueryString["Marca"];
 
             if (!IsPostBack)
             {
+                try { 
                 Prodotto.ListaProdotti.Clear();
                 SqlConnection connessioneDB = new SqlConnection();
                 connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
                 connessioneDB.Open();
 
-                SqlCommand command = new SqlCommand();
-                command.CommandText = $"SELECT * FROM Prodotto Where ID_Categoria = {IdCategoria}";
-                command.Connection = connessioneDB;
+                SqlCommand command2 = new SqlCommand();
+                command2.CommandText = $"SELECT * FROM Prodotto Where Marca LIKE '%{Marca}%'";
+                command2.Connection = connessioneDB;
 
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = command2.ExecuteReader();
 
                 if (reader.HasRows)
                 {
@@ -48,9 +49,25 @@ namespace Build_Week_Gruppo_A
                         Prodotto.ListaProdotti.Add(p);
                     }
                 }
+                REPEATER_Ricerca.DataSource = Prodotto.ListaProdotti;
+                REPEATER_Ricerca.DataBind();
 
                 connessioneDB.Close();
+                } catch (Exception ex)
+                {
+                    Label_ERRORE.Text = ex.Message;
+                }
             }
+        }
+
+        protected void Button_DettagliProdotto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button_AggiungiCarrello_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
