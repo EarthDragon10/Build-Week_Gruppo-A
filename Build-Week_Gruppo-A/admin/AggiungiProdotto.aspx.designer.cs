@@ -96,6 +96,15 @@ namespace Build_Week_Gruppo_A.admin
         protected global::System.Web.UI.WebControls.Button Button_AggiungiProdotto;
 
         /// <summary>
+        /// Controllo Button_ModificaProdotto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_ModificaProdotto;
+
+        /// <summary>
         /// Controllo Label_RigheInteressate.
         /// </summary>
         /// <remarks>

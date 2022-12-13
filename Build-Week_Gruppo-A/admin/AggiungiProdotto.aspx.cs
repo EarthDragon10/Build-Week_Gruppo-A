@@ -66,11 +66,21 @@ namespace Build_Week_Gruppo_A.admin
                             TEXTBOX_Descrizione.Text = readerModifica["Descrizione"].ToString();
                             TEXTBOX_PrezzoVendita.Text = readerModifica["PrezzoVendita"].ToString();
                             CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
+                            DropDownList_Categoria.SelectedValue = readerModifica
                             TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
-                            FileUpload_Image.GetRouteUrl(readerModifica["URLImg"]);
+                            
                             
                         }
                     }
+
+                    if (CheckBox_InPromozione.Checked)
+                    {
+                        TEXTBOX_PrezzoPrecedente.Visible = true;
+                    }
+
+                    Button_AggiungiProdotto.Visible = false;
+                    Button_ModificaProdotto.Visible = true;
+
 
 
                 }
@@ -140,6 +150,11 @@ namespace Build_Week_Gruppo_A.admin
                 Label_RigheInteressate.Text = ex.Message;
                 Label_RigheInteressate.ForeColor = Color.Red;
             }
+        }
+
+        protected void Button_ModificaProdotto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

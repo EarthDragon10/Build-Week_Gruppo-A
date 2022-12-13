@@ -13,7 +13,7 @@
                 
                 <ItemTemplate>
                      
-                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
+                    <asp:Button ID="Button1" runat="server" Text="Modifica" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
                     <asp:Button ID="Button2" runat="server" Text="Button" />
                 </ItemTemplate>
             </asp:TemplateField>
