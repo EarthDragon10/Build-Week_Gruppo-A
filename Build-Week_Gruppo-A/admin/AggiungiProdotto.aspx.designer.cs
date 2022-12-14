@@ -96,6 +96,42 @@ namespace Build_Week_Gruppo_A.admin
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Categoria;
 
         /// <summary>
+        /// Controllo CheckBox_AggiungiCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_AggiungiCategoria;
+
+        /// <summary>
+        /// Controllo TEXTBOX_AggiungiCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TEXTBOX_AggiungiCategoria;
+
+        /// <summary>
+        /// Controllo CheckBox_EliminaCategoriaByName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_EliminaCategoriaByName;
+
+        /// <summary>
+        /// Controllo DropDownList_EliminaCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_EliminaCategoria;
+
+        /// <summary>
         /// Controllo Button_AggiungiProdotto.
         /// </summary>
         /// <remarks>

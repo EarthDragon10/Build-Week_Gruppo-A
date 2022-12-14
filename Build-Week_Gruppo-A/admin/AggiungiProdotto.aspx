@@ -13,12 +13,14 @@
             <asp:TextBox ID="TEXTBOX_PrezzoPrecedente" Visible="false" CssClass="form-control" placeholder="Prezzo Precedente" runat="server"></asp:TextBox>
             <asp:FileUpload ID="FileUpload_Image" runat="server" />
             <asp:Label ID="Label_Immagine" runat="server" Text=""></asp:Label>
-            <asp:DropDownList ID="DropDownList_Categoria" runat="server"></asp:DropDownList>
-            <%--  
-            CHECKBOX PER AGGIUNGERERE UNA NUOVA CATEGORIA
-            <asp:CheckBox ID="CheckBox1" OnCheckedChanged="CheckBox_InPromozione_CheckedChanged" 
-                AutoPostBack="true" Checked="false" Text="In promozione?" runat="server" />
-            --%>
+            <asp:DropDownList ID="DropDownList_Categoria" runat="server"></asp:DropDownList> <br />
+
+            <asp:CheckBox ID="CheckBox_AggiungiCategoria" OnCheckedChanged="CheckBox_AggiungiCategoria_CheckedChanged" AutoPostBack="true" Checked="false" Text="Creare nuova categoria?" runat="server" />
+            <asp:TextBox ID="TEXTBOX_AggiungiCategoria" Visible="false" CssClass="form-control" placeholder="Nome della nuova categoria" runat="server"></asp:TextBox> <br />
+
+            <asp:CheckBox ID="CheckBox_EliminaCategoriaByName" OnCheckedChanged="CheckBox_EliminaCategoriaByName_CheckedChanged" AutoPostBack="true" Checked="false" Text="Eliminare una categoria?" runat="server" />
+            <asp:DropDownList ID="DropDownList_EliminaCategoria" Visible="false" runat="server"></asp:DropDownList> <br />
+
             <asp:Button ID="Button_AggiungiProdotto" CssClass="btn btn-warning" OnClick="Button_AggiungiProdotto_Click" runat="server" Text="Aggiungi prodotto" />
             <asp:Button ID="Button_ModificaProdotto" Visible="false" CssClass="btn btn-warning" OnClick="Button_ModificaProdotto_Click" runat="server" Text="Modifica prodotto" />
             <asp:Label ID="Label_RigheInteressate" runat="server" Text=""></asp:Label>

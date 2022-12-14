@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content  ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ItemType="Build_Week_Gruppo_A.Prodotto" AutoGenerateColumns="false" ID="GridView_ListaProdotti" runat="server">
+    <div class="container justify-content-center">     
+        
+        <a class="text-center" href="AggiungiProdotto.aspx">Aggiungi un nuovo Prodotto</a>
+    <asp:GridView ItemType="Build_Week_Gruppo_A.Prodotto" AutoGenerateColumns="false" CssClass="table table-secondary table-striped border-0" ID="GridView_ListaProdotti" runat="server">
         <Columns>
             <asp:BoundField DataField="Marca" HeaderText="Marca"  />
             <asp:BoundField DataField="Modello" HeaderText="Modello" />
@@ -12,14 +15,14 @@
             <asp:TemplateField>
                 
                 <ItemTemplate>
-                     
-                    <asp:Button ID="Button1" runat="server" Text="Modifica" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
-                    <asp:Button ID="Button2" runat="server" Text="Elimina" OnClick="Button2_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
+                    <asp:Button ID="Button1" runat="server" Text="Modifica" CssClass="bg-light" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
+                    <asp:Button ID="Button2" runat="server" Text="X" CssClass="bg-danger" OnClick="Button2_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
                 </ItemTemplate>
             </asp:TemplateField>
 
         </Columns>
 
     </asp:GridView>
+        </div>
 
 </asp:Content>
