@@ -61,8 +61,17 @@ namespace Build_Week_Gruppo_A
         protected void Button_AggiungiCarrello_Click(object sender, EventArgs e) 
             
         {
-            
+            Button AggiungiCarrello = (Button)sender;
+            int idProdottoAggiunto = Convert.ToInt32(AggiungiCarrello.CommandArgument);
 
+            foreach (Prodotto chitarra in Prodotto.ListaProdotti)
+            {
+                if (chitarra.ID_Prodotto == Convert.ToInt32(idProdottoAggiunto))
+                {
+                    Prodotto.CarrelloUtente.Add(chitarra);
+
+                }
+            }
         }
 
         
