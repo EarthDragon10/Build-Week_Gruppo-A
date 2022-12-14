@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using static System.Net.WebRequestMethods;
@@ -27,7 +28,12 @@ namespace Build_Week_Gruppo_A
                     Button_LogoutCookie.Visible = true;
                     Label_NomeCookie.Text = Request.Cookies["Utente_Loggato"]["Nome"];
                 }
-                
+                if (Request.Cookies["Utente_Loggato"] != null)
+                {
+                    Button_LogoutCookie.Visible = true;
+                    Label_NomeCookie.Text = Request.Cookies["Utente_Loggato"]["Nome"];
+                }
+
 
 
                 Categoria.Categorie.Clear();
@@ -68,6 +74,7 @@ namespace Build_Week_Gruppo_A
 
         protected void Button_LogoutCookie_Click(object sender, EventArgs e)
         {
+            FormsAuthentication.SignOut();
             HttpCookie LogoutCookie = new HttpCookie("Utente_Loggato");
             LogoutCookie.Expires = DateTime.Now.AddDays(-1);
             Response.Cookies.Add(LogoutCookie);

@@ -8,10 +8,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <div class="row flex-wrap py-4 justify-content-start align-items-center">
+        <div class="row flex-wrap py-4 justify-content-start align-items-center border border-1 shadow ">
             <asp:Repeater ID="REPEATER_SelectAllFromProdotto" ItemType="Build_Week_Gruppo_A.Prodotto" runat="server">
                 <ItemTemplate>
-                    <div class="bg-white py-5 row col-12 col-md-6 col-lg-4">
+                    <div class="bg-white ms-1 py-3 row col-12 col-md-6 col-lg-4 ">
 
 
                         <div class="col-3">

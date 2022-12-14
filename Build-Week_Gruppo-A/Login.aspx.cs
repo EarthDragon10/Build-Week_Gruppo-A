@@ -40,13 +40,17 @@ namespace Build_Week_Gruppo_A
 
                 if (record.Read())
                 {
+                    HttpCookie LogoutCookie = new HttpCookie("Utente_Loggato");
+                    LogoutCookie.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(LogoutCookie);
+                    FormsAuthentication.SignOut();
                     FormsAuthentication.SetAuthCookie(username, CheckBox_RicordamiAccedi.Checked);
                     HttpCookie UtenteLoggato = new HttpCookie("Utente_Loggato");
                     UtenteLoggato.Values["Nome"] = record["Nome"].ToString();
                     UtenteLoggato.Values["Ruolo"] = record["Ruolo"].ToString();
                     Response.Cookies.Add(UtenteLoggato);
                     connessioneDB.Close();
-                    Response.Redirect(FormsAuthentication.DefaultUrl);
+                    Response.Redirect("/Default.aspx");
                 } else
                 {
                     Label_ERROR.Text = "Username e Password non coincidono.";
