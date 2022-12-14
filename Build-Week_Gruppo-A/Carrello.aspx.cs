@@ -30,7 +30,7 @@ namespace Build_Week_Gruppo_A
                 if (Prodotto.CarrelloUtente.Count != 0)
                 {
 
-                    double Tot = 0;
+                    decimal Tot = 0;
 
                     foreach (Prodotto item in Prodotto.CarrelloUtente)
                     {

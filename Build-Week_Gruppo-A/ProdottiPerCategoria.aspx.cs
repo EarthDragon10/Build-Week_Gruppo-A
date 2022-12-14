@@ -36,13 +36,13 @@ namespace Build_Week_Gruppo_A
                         p.ID_Prodotto = Convert.ToInt32(reader["ID_Prodotto"]);
                         p.Marca = reader["Marca"].ToString();
                         p.Modello = reader["Modello"].ToString();
-                        p.PrezzoVendita = Convert.ToDouble(reader["PrezzoVendita"]);
+                        p.PrezzoVendita = Convert.ToDecimal(reader["PrezzoVendita"]);
                         p.URLImg = reader["URLImg"].ToString();
                         p.Descrizione = reader["Descrizione"].ToString();
                         p.InPromozione = Convert.ToBoolean(reader["InPromozione"]);
                         if (p.InPromozione)
                         {
-                            p.PrezzoPrecedente = Convert.ToDouble(reader["PrezzoPrecedente"]);
+                            p.PrezzoPrecedente = Convert.ToDecimal(reader["PrezzoPrecedente"]);
                         }
                         p.ID_Categoria = Convert.ToInt32(reader["ID_Categoria"]);
                         Prodotto.ListaProdotti.Add(p);

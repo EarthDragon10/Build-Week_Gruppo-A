@@ -41,7 +41,7 @@ namespace Build_Week_Gruppo_A.admin
                             prodottoAdmin.ID_Prodotto = Convert.ToInt32(prodottiTable["ID_Prodotto"]);
                             prodottoAdmin.Marca = prodottiTable["Marca"].ToString();
                             prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
-                            prodottoAdmin.PrezzoVendita = Convert.ToInt32(prodottiTable["PrezzoVendita"]);
+                            prodottoAdmin.PrezzoVendita = Convert.ToDecimal(prodottiTable["PrezzoVendita"]);
                             prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
                             prodottoAdmin.Tipologia = prodottiTable["Tipologia"].ToString();
                             

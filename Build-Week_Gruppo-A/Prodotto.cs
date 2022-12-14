@@ -10,8 +10,8 @@ namespace Build_Week_Gruppo_A
         public int ID_Prodotto { get; set; }
         public string Marca { get; set; }
         public string Modello { get; set; }
-        public double PrezzoVendita { get; set; }
-        public double PrezzoPrecedente { get; set; }
+        public decimal PrezzoVendita { get; set; }
+        public decimal PrezzoPrecedente { get; set; }
         public string URLImg { get; set; }
         public string Descrizione { get; set; }
         public bool InPromozione { get; set; }
