@@ -43,6 +43,8 @@ namespace Build_Week_Gruppo_A.admin
                             prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
                             prodottoAdmin.PrezzoVendita = Convert.ToInt32(prodottiTable["PrezzoVendita"]);
                             prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
+                            prodottoAdmin.Tipologia = prodottiTable["Tipologia"].ToString();
+                            
 
 
                             ListaProdottiAdmin.Add(prodottoAdmin);
@@ -74,6 +76,24 @@ namespace Build_Week_Gruppo_A.admin
             int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
 
             Response.Redirect($"./AggiungiProdotto.aspx?IdProdotto={idProdotto}");
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Button ModificaProdotto = (Button)sender;
+            int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
+
+            SqlConnection connessioneDB = new SqlConnection();
+            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+            connessioneDB.Open();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = $"DELETE  FROM Prodotto WHERE ID_Prodotto = {idProdotto}";
+            command.Connection = connessioneDB;
+
+            command.ExecuteNonQuery();
+
 
         }
     }
