@@ -37,6 +37,7 @@ namespace Build_Week_Gruppo_A.admin
                         listitem_categoria.Text = c;
                         listitem_categoria.Value = id;
                         DropDownList_Categoria.Items.Add(listitem_categoria);
+                        DropDownList_EliminaCategoria.Items.Add(listitem_categoria);
 
                     }
                 }
@@ -79,7 +80,19 @@ namespace Build_Week_Gruppo_A.admin
                     if (CheckBox_InPromozione.Checked)
                     {
                         TEXTBOX_PrezzoPrecedente.Visible = true;
+                    } else
+                    {
+                        TEXTBOX_PrezzoPrecedente.Visible = false;
                     }
+
+                    if (CheckBox_AggiungiCategoria.Checked)
+                    {
+                        TEXTBOX_AggiungiCategoria.Visible = true;
+                    } else
+                    {
+                        TEXTBOX_AggiungiCategoria.Visible = false;
+                    }
+
 
                     Button_AggiungiProdotto.Visible = false;
                     Button_ModificaProdotto.Visible = true;
@@ -107,7 +120,80 @@ namespace Build_Week_Gruppo_A.admin
         protected void Button_AggiungiProdotto_Click(object sender, EventArgs e)
         {
 
+            if (TEXTBOX_AggiungiCategoria.Text != "")
+            {
+                try
+                {
+
+                    SqlConnection connessioneDB = new SqlConnection();
+                    connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                    connessioneDB.Open();
+
+                    SqlCommand command = new SqlCommand();
+
+                    command.Parameters.AddWithValue("@Tipologia", TEXTBOX_AggiungiCategoria.Text);
+                    command.CommandText = "INSERT INTO Categoria VALUES (@Tipologia)";
+                    command.Connection = connessioneDB;
+
+                    int righeInteressate = command.ExecuteNonQuery();
+
+                    if (righeInteressate > 0)
+                    {
+                        Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                    }
+                    else
+                    {
+                        Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                    }
+
+                    connessioneDB.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Label_RigheInteressate.Text = ex.Message;
+                    Label_RigheInteressate.ForeColor = Color.Red;
+                }
+            } else if (CheckBox_EliminaCategoriaByName.Checked){
+                try
+                {
+
+                    SqlConnection connessioneDB = new SqlConnection();
+                    connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                    connessioneDB.Open();
+
+                    SqlCommand command = new SqlCommand();
+
+                    command.Parameters.AddWithValue("@ID_Categoria", DropDownList_EliminaCategoria.SelectedItem.Value);
+                    command.CommandText = "DELETE FROM Categoria WHERE ID_Categoria = @ID_Categoria";
+                    command.Connection = connessioneDB;
+
+                    int righeInteressate = command.ExecuteNonQuery();
+
+                    if (righeInteressate > 0)
+                    {
+                        Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                        Response.Redirect("~/admin/AggiungiProdotto.aspx");
+                    }
+                    else
+                    {
+                        Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                    }
+
+                    connessioneDB.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Label_RigheInteressate.Text = ex.Message;
+                    Label_RigheInteressate.ForeColor = Color.Red;
+                }
+
+
+
+            } else { 
             try { 
+
                 SqlConnection connessioneDB = new SqlConnection();
                 connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
                 connessioneDB.Open();
@@ -154,6 +240,8 @@ namespace Build_Week_Gruppo_A.admin
                 Label_RigheInteressate.ForeColor = Color.Red;
             }
         }
+        }
+
 
         protected void Button_ModificaProdotto_Click (object sender, EventArgs e)
         {
@@ -241,14 +329,67 @@ namespace Build_Week_Gruppo_A.admin
             }
 
             }
+        }
+
+        protected void CheckBox_AggiungiCategoria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox_AggiungiCategoria.Checked)
+            {
+                DropDownList_Categoria.Visible = false;
+                TEXTBOX_AggiungiCategoria.Visible = true;
+                TEXTBOX_Marca.Visible = false;
+                TEXTBOX_Descrizione.Visible = false;
+                TEXTBOX_Modello.Visible = false;
+                TEXTBOX_PrezzoVendita.Visible = false;
+                CheckBox_InPromozione.Visible = false;
+                FileUpload_Image.Visible = false;
+                CheckBox_EliminaCategoriaByName.Visible = false;
+            }
+            else
+            {
+                DropDownList_Categoria.Visible = true;
+                TEXTBOX_AggiungiCategoria.Visible = false;
+                TEXTBOX_Marca.Visible = true;
+                TEXTBOX_Descrizione.Visible=true;
+                TEXTBOX_Modello.Visible=true;
+                TEXTBOX_PrezzoVendita.Visible=true;
+                CheckBox_InPromozione.Visible = true;
+                FileUpload_Image.Visible = true;
+                CheckBox_EliminaCategoriaByName.Visible = true;
+            }
+        }
+
+        protected void CheckBox_EliminaCategoriaByName_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox_EliminaCategoriaByName.Checked)
+            {
+                
+                DropDownList_Categoria.Visible = false;
+                TEXTBOX_AggiungiCategoria.Visible = false;
+                TEXTBOX_Marca.Visible = false;
+                TEXTBOX_Descrizione.Visible = false;
+                TEXTBOX_Modello.Visible = false;
+                TEXTBOX_PrezzoVendita.Visible = false;
+                CheckBox_InPromozione.Visible = false;
+                FileUpload_Image.Visible = false;
+                DropDownList_EliminaCategoria.Visible = true;
+                CheckBox_AggiungiCategoria.Visible = false;
 
 
-
-
-
-
-
-
+            }
+            else
+            {
+                DropDownList_Categoria.Visible = true;
+                TEXTBOX_AggiungiCategoria.Visible = true;
+                TEXTBOX_Marca.Visible = true;
+                TEXTBOX_Descrizione.Visible = true;
+                TEXTBOX_Modello.Visible = true;
+                TEXTBOX_PrezzoVendita.Visible = true;
+                CheckBox_InPromozione.Visible = true;
+                FileUpload_Image.Visible = true;
+                DropDownList_EliminaCategoria.Visible = false;
+                CheckBox_AggiungiCategoria.Visible = true;
+            }
         }
     }
 }
