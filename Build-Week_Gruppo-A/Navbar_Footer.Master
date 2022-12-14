@@ -21,16 +21,21 @@
 
             <nav class="navbar navbar-expand bg-light">
                 <div class="container">
-                    
-                        <a class="navbar-brand d-none d-sm-block" href="../Default.aspx">E-Commerce</a>
-         
-                        <div class="d-flex w-100 mx-5" style="max-width:400px">
-                            <asp:TextBox CssClass="form-control" ID="TextBox_CercaChitarra" placeholder="Cerca la tua chitarra preferita"  runat="server"></asp:TextBox>
-                            <asp:Button ID="Button_CercaChitarra" CssClass="btn btn-sm btn-secondary" runat="server" OnClick="Button_CercaChitarra_Click" Text="Cerca" />
-                        </div>             
-                    <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-success" Text="👤" ID="LinkButton_Login" PostBackUrl="../Login.aspx"></asp:LinkButton>
-                    <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-secondary" Text="🛒" ID="LinkButton_Carrello" PostBackUrl="../Carrello.aspx"></asp:LinkButton>
 
+                    <div class="d-flex">
+                        <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-secondary mx-2" Text="👤" ID="LinkButton_Login" PostBackUrl="~/Login.aspx"></asp:LinkButton>
+                        <a class="navbar-brand d-none d-sm-block" style="font-size: 13px; font-weight: bold" href="../Default.aspx">Benvenuto,
+                            <asp:Label ID="Label_NomeCookie" runat="server" Text="Utente"></asp:Label></a>
+                            <asp:Button ID="Button_LogoutCookie" OnClick="Button_LogoutCookie_Click" Visible="false" runat="server" CssClass="btn btn-outline-light btn-sm" ForeColor="red" Text="❌"></asp:Button>
+                    </div>
+                    <div class="d-flex w-100 mx-5" style="max-width: 400px">
+                        <asp:TextBox CssClass="form-control" ID="TextBox_CercaChitarra" placeholder="Cerca la tua chitarra preferita" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button_CercaChitarra" CssClass="btn btn-sm btn-secondary" runat="server" OnClick="Button_CercaChitarra_Click" Text="Cerca" />
+                    </div>
+                    <div class="d-flex">
+                        <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-secondary mx-2" Text="🛒" ID="LinkButton_Carrello" PostBackUrl="~/Carrello.aspx"></asp:LinkButton>
+                        <asp:LinkButton runat="server" Visible="false" CssClass="btn btn-sm btn-outline-dark" Text="🤖" ID="LinkButton_Admin" PostBackUrl="~/admin/ListaProdotti.aspx"></asp:LinkButton>
+                    </div>
                 </div>
             </nav>
 

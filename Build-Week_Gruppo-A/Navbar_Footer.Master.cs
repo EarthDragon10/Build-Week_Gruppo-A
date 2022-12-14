@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Net.WebRequestMethods;
 
 namespace Build_Week_Gruppo_A
 {
@@ -15,6 +16,15 @@ namespace Build_Week_Gruppo_A
         {
             if (!IsPostBack)
             {
+                if (Request.Cookies["Utente_Loggato"] != null && (Request.Cookies["Utente_Loggato"]["Ruolo"] == "admin"))
+                {
+                    LinkButton_Admin.Visible = true;
+                    Button_LogoutCookie.Visible = true;
+                    Label_NomeCookie.Text = Request.Cookies["Utente_Loggato"]["Nome"];
+                }
+                
+
+
                 Categoria.Categorie.Clear();
                 SqlConnection connessioneDB = new SqlConnection();
                 connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
@@ -49,6 +59,14 @@ namespace Build_Week_Gruppo_A
         {
             string url = $"BarraDiRicerca.aspx?Marca={TextBox_CercaChitarra.Text}";
             Response.Redirect(url);
+        }
+
+        protected void Button_LogoutCookie_Click(object sender, EventArgs e)
+        {
+            HttpCookie LogoutCookie = new HttpCookie("Utente_Loggato");
+            LogoutCookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(LogoutCookie);
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

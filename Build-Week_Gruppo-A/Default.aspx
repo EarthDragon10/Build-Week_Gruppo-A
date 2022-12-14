@@ -14,22 +14,23 @@
                     <div class="bg-white py-5 row col-12 col-md-6 col-lg-4">
 
 
-                        <div class="col-2">
+                        <div class="col-3">
                             <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>"> 
                             <asp:Image CssClass="widthImg" ImageUrl='<%#"~/img/"  + Item.URLImg %>' runat="server" />
                             </a>
                         </div>
                         
                        
-                        <div class="col-10">
+                        <div class="col-9">
                             <h2><%#Item.Marca %></h2>
                             <p><%#Item.Modello %></p>
-                            <p>Prezzo: <%#Item.PrezzoVendita.ToString("c2") %> </p>
+                            <p>Prezzo: <b><%#Item.PrezzoVendita.ToString("c2") %> </b></p>
 
-                            <asp:Label Text='<%# "In Offerta! Prezzo precedente = " + Item.PrezzoPrecedente %>' ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" />
+                            <asp:Label  Text='<%# "SCONTATO AL " + Math.Floor((Item.PrezzoPrecedente - Item.PrezzoVendita) * 100 / Item.PrezzoPrecedente) +"%" %>' Font-Bold="true" ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" /> <br />
+                            <asp:Label  Text='<%# "Risparmio: " + (Item.PrezzoPrecedente - Item.PrezzoVendita).ToString("c2") %>' Visible="<%#Item.InPromozione %>" runat="server" /> <br />
 
-                            <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>" class="btn btn-primary"> Dettagli Prodotto </a>
-                            <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" runat="server" CssClass="btn btn-success" Text="Aggiungi al carrello" />
+                            <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>" class="btn btn-sm btn-dark my-2"> Dettagli</a>
+                            <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" runat="server" CssClass="btn btn-sm btn-success" Text="Aggiungi al carrello" />
 
                         </div>
                     </div>

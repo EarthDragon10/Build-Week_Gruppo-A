@@ -13,7 +13,21 @@ namespace Build_Week_Gruppo_A
         {
             if(!IsPostBack)
             {
-                if(Prodotto.CarrelloUtente.Count != 0)
+
+
+                if (Prodotto.CarrelloUtente.Count() == 0) 
+                {
+                    Delete.Visible = false;
+                    lblEmptyCart.Visible = true;
+                    lblTotCarrello.Text = 0.ToString("c2");
+                } 
+                else { 
+                    Delete.Visible = true; 
+                    lblEmptyCart.Visible = false; 
+                }
+
+
+                if (Prodotto.CarrelloUtente.Count != 0)
                 {
 
                     double Tot = 0;
@@ -33,12 +47,10 @@ namespace Build_Week_Gruppo_A
 
         protected void Delete_Click(object sender, EventArgs e)
         {
-            GridCarrello.Visible = false;
-            Delete.Visible = false;
-            Prodotto.ListaProdotti.Clear();
-
-            lblTotCarrello.Text = 0.ToString("c2");
-            lblEmptyCart.Text = $" <a href=\"Default.aspx\">Il tuo carrello è vuoto... Torna alla pagina prodotti</a><hr />";
+            
+            Prodotto.CarrelloUtente.Clear();
+            Response.Redirect("~/Carrello.aspx");
+       
         }
     }
 }

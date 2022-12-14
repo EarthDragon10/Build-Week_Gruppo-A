@@ -33,6 +33,33 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controllo LinkButton_Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Login;
+
+        /// <summary>
+        /// Controllo Label_NomeCookie.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_NomeCookie;
+
+        /// <summary>
+        /// Controllo Button_LogoutCookie.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_LogoutCookie;
+
+        /// <summary>
         /// Controllo TextBox_CercaChitarra.
         /// </summary>
         /// <remarks>
@@ -51,15 +78,6 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Button Button_CercaChitarra;
 
         /// <summary>
-        /// Controllo LinkButton_Login.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Login;
-
-        /// <summary>
         /// Controllo LinkButton_Carrello.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace Build_Week_Gruppo_A
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_Carrello;
+
+        /// <summary>
+        /// Controllo LinkButton_Admin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Admin;
 
         /// <summary>
         /// Controllo Repeater_NavbarCategorie.

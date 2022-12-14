@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
-        <asp:Label ID="lblEmptyCart" runat="server" Text=""></asp:Label>
+        <a href="../Default.aspx"><asp:Label ID="lblEmptyCart" runat="server" Text="Il tuo carrello è vuoto... Torna alla pagina prodotti"></asp:Label></a><hr />
         <asp:GridView ID="GridCarrello" CssClass="table table-bordered table-striped" runat="server"
             AutoGenerateColumns="false" ItemType="Build_Week_Gruppo_A.Prodotto" Visible="true">
             <Columns>
