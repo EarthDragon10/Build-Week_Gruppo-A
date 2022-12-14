@@ -1,12 +1,15 @@
-﻿body {
-}
+﻿
 
 ul li {
     list-style: none;
     margin-inline: 10px;
 }
 
-ul li a {
+a {
     text-decoration: none;
     color: black;
 }
+
+
+
+

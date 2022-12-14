@@ -114,13 +114,13 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.TextBox TextBox_CercaChitarraDARK;
 
         /// <summary>
-        /// Controllo Button1.
+        /// Controllo ButtonGuitSearch.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ButtonGuitSearch;
 
         /// <summary>
         /// Controllo Repeater_NavbarCategorie.

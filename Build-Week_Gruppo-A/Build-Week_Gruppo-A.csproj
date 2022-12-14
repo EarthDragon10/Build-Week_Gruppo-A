@@ -118,6 +118,7 @@
     <Content Include="img\8.jpg" />
     <Content Include="img\9.jpg" />
     <Content Include="img\Musicalita.png" />
+    <Content Include="img\sfondo2.png" />
     <Content Include="Login.aspx" />
     <Content Include="ProdottiPerCategoria.aspx" />
     <Content Include="Registrazione.aspx" />
