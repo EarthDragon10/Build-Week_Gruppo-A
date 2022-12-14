@@ -78,5 +78,23 @@ namespace Build_Week_Gruppo_A.admin
             Response.Redirect($"./AggiungiProdotto.aspx?IdProdotto={idProdotto}");
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Button ModificaProdotto = (Button)sender;
+            int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
+
+            SqlConnection connessioneDB = new SqlConnection();
+            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+            connessioneDB.Open();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = $"DELETE  FROM Prodotto WHERE ID_Prodotto = {idProdotto}";
+            command.Connection = connessioneDB;
+
+            command.ExecuteNonQuery();
+
+
+        }
     }
 }

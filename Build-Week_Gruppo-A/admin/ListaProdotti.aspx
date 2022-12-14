@@ -14,7 +14,7 @@
                 <ItemTemplate>
                      
                     <asp:Button ID="Button1" runat="server" Text="Modifica" OnClick="Button1_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
-                    <asp:Button ID="Button2" runat="server" Text="Button" />
+                    <asp:Button ID="Button2" runat="server" Text="Elimina" OnClick="Button2_Click" CommandArgument="<%#Item.ID_Prodotto %>" />
                 </ItemTemplate>
             </asp:TemplateField>
 

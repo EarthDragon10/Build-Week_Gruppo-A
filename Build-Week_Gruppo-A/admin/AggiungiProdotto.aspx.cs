@@ -158,6 +158,9 @@ namespace Build_Week_Gruppo_A.admin
         {
             
             string idQueryModifica = Request.QueryString["IdProdotto"];
+            if (FileUpload_Image.HasFile)
+            {
+
             try
             {
 
@@ -173,11 +176,10 @@ namespace Build_Week_Gruppo_A.admin
                 command.Parameters.AddWithValue("@Modello", TEXTBOX_Modello.Text);
                 command.Parameters.AddWithValue("@Descrizione", TEXTBOX_Descrizione.Text);
 
-                if (FileUpload_Image.HasFile)
-                {
-                    FileUpload_Image.SaveAs(Server.MapPath($"/img/{FileUpload_Image.FileName}"));
+
+                    FileUpload_Image.SaveAs(Server.MapPath($"~/img/{FileUpload_Image.FileName}"));
                     command.Parameters.AddWithValue("@URLImg", FileUpload_Image.FileName);
-                }
+                              
 
                 command.Parameters.AddWithValue("@PrezzoVendita", TEXTBOX_PrezzoVendita.Text);
 
@@ -187,8 +189,7 @@ namespace Build_Week_Gruppo_A.admin
 
                 command.Parameters.AddWithValue("@ID_Categoria", DropDownList_Categoria.SelectedItem.Value);
 
-                command.CommandText = $"UPDATE Prodotto SET (@Marca = Marca, @Descrizione = Descrizione, @Modello = Modello, @URLImg = URLImg," +
-                    $" @PrezzoVendita = PrezzoVendita, @PrezzoPrecedente = PrezzoPrecedente, @InPromozione = InPromozione, @ID_Categoria = ID_Categoria) WHERE ID_Prodotto = {idQueryModifica}";
+                command.CommandText = $"UPDATE Prodotto SET Marca = @Marca, Descrizione = @Descrizione, Modello = @Modello, URLImg = @URLImg, PrezzoVendita = @PrezzoVendita, PrezzoPrecedente = @PrezzoPrecedente, InPromozione = @InPromozione, ID_Categoria = @ID_Categoria WHERE ID_Prodotto = {idQueryModifica}";
                 command.Connection = connessioneDB;
                 command.ExecuteNonQuery();
                 connessioneDB.Close();
@@ -197,18 +198,53 @@ namespace Build_Week_Gruppo_A.admin
             {
                 Label_RigheInteressate.Text = ex.Message;
             }
+            }
+            else
+            {
+
+            try
+            {
 
 
-            
+                SqlConnection connessioneDB = new SqlConnection();
+                connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                connessioneDB.Open();
 
-            //if (righeInteressate > 0)
-            //{
-            //    Label_RigheInteressate.Text = "Aggiornamento effettuato sul cesso.";
-            //}
-            //else
-            //{
-            //    Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
-            //}
+                SqlCommand command = new SqlCommand();
+
+
+                command.Parameters.AddWithValue("@Marca", TEXTBOX_Marca.Text);
+                command.Parameters.AddWithValue("@Modello", TEXTBOX_Modello.Text);
+                command.Parameters.AddWithValue("@Descrizione", TEXTBOX_Descrizione.Text);
+
+
+
+                command.Parameters.AddWithValue("@PrezzoVendita", TEXTBOX_PrezzoVendita.Text);
+
+                command.Parameters.AddWithValue("@PrezzoPrecedente", TEXTBOX_PrezzoPrecedente.Text);
+
+                command.Parameters.AddWithValue("@InPromozione", CheckBox_InPromozione.Checked);
+
+                command.Parameters.AddWithValue("@ID_Categoria", DropDownList_Categoria.SelectedItem.Value);
+
+                command.CommandText = $"UPDATE Prodotto SET Marca = @Marca, Descrizione = @Descrizione, Modello = @Modello," +
+                    $" PrezzoVendita = @PrezzoVendita, PrezzoPrecedente = @PrezzoPrecedente, InPromozione = @InPromozione, ID_Categoria = @ID_Categoria WHERE ID_Prodotto = {idQueryModifica}";
+                command.Connection = connessioneDB;
+                command.ExecuteNonQuery();
+                connessioneDB.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Label_RigheInteressate.Text = ex.Message;
+            }
+
+            }
+
+
+
+
+
 
 
 
