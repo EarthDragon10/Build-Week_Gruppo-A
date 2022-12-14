@@ -82,8 +82,8 @@ namespace Build_Week_Gruppo_A.admin
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Button ModificaProdotto = (Button)sender;
-            int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
+            Button EliminaProdotto = (Button)sender;
+            int idProdotto = Convert.ToInt32(EliminaProdotto.CommandArgument);
 
             
             SqlConnection connessioneDB = new SqlConnection();
