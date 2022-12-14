@@ -51,13 +51,22 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Button Button_CercaChitarra;
 
         /// <summary>
-        /// Controllo Button_Carrello.
+        /// Controllo LinkButton_Login.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Carrello;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Login;
+
+        /// <summary>
+        /// Controllo LinkButton_Carrello.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Carrello;
 
         /// <summary>
         /// Controllo Repeater_NavbarCategorie.

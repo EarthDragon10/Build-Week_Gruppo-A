@@ -15,21 +15,21 @@
     <form id="form1" runat="server">
         <div>
 
-            <img class="img-fluid w-100" style="max-height:130px" src="img/Musicalita.png" />
+            <a href="../Default.aspx"><img class="img-fluid w-100" style="max-height:130px" src="../img/Musicalita.png" /></a>
 
             <%-- NAVBAR LIGHT DELLA SEARCH BAR  --%>
 
             <nav class="navbar navbar-expand bg-light">
                 <div class="container">
                     
-                        <a class="navbar-brand" href="Default.aspx">E-Commerce</a>
+                        <a class="navbar-brand d-none d-sm-block" href="../Default.aspx">E-Commerce</a>
          
-                        <div>
-                            <asp:TextBox CssClass="w-50 form-control" ID="TextBox_CercaChitarra" placeholder="Cerca la tua chitarra preferita"  runat="server"></asp:TextBox>
-                            <asp:Button ID="Button_CercaChitarra" runat="server" OnClick="Button_CercaChitarra_Click" Text="Cerca" />
+                        <div class="d-flex w-100 mx-5" style="max-width:400px">
+                            <asp:TextBox CssClass="form-control" ID="TextBox_CercaChitarra" placeholder="Cerca la tua chitarra preferita"  runat="server"></asp:TextBox>
+                            <asp:Button ID="Button_CercaChitarra" CssClass="btn btn-sm btn-secondary" runat="server" OnClick="Button_CercaChitarra_Click" Text="Cerca" />
                         </div>             
-                    
-                        <asp:Button runat="server" ID="Button_Carrello" CssClass="btn btn-sm btn-outline-secondary" Text="🛒"/>
+                    <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-success" Text="👤" ID="LinkButton_Login" PostBackUrl="../Login.aspx"></asp:LinkButton>
+                    <asp:LinkButton runat="server" CssClass="btn btn-sm btn-outline-secondary" Text="🛒" ID="LinkButton_Carrello" PostBackUrl="../Carrello.aspx"></asp:LinkButton>
 
                 </div>
             </nav>
