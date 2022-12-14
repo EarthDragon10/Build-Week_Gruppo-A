@@ -66,7 +66,7 @@ namespace Build_Week_Gruppo_A.admin
                             TEXTBOX_Marca.Text = readerModifica["Marca"].ToString();
                             TEXTBOX_Modello.Text = readerModifica["Modello"].ToString();
                             TEXTBOX_Descrizione.Text = readerModifica["Descrizione"].ToString();
-                            TEXTBOX_PrezzoVendita.Text = Math.Floor(Convert.ToDouble(readerModifica["PrezzoVendita"])).ToString();
+                            TEXTBOX_PrezzoVendita.Text = Convert.ToDouble(readerModifica["PrezzoVendita"]).ToString();
                             CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
                             DropDownList_Categoria.SelectedValue = readerModifica["ID_Categoria"].ToString();
                             TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
@@ -328,7 +328,7 @@ namespace Build_Week_Gruppo_A.admin
                 Label_RigheInteressate.Text = ex.Message;
             }
 
-                Response.Redirect("ListaProdotto.aspx");
+                Response.Redirect("ListaProdotti.aspx");
 
             }
         }

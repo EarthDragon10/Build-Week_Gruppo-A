@@ -41,7 +41,7 @@ namespace Build_Week_Gruppo_A.admin
                             prodottoAdmin.ID_Prodotto = Convert.ToInt32(prodottiTable["ID_Prodotto"]);
                             prodottoAdmin.Marca = prodottiTable["Marca"].ToString();
                             prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
-                            prodottoAdmin.PrezzoVendita = Convert.ToInt32(prodottiTable["PrezzoVendita"]);
+                            prodottoAdmin.PrezzoVendita = Convert.ToDecimal(prodottiTable["PrezzoVendita"]);
                             prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
                             prodottoAdmin.Tipologia = prodottiTable["Tipologia"].ToString();
                             
@@ -82,8 +82,8 @@ namespace Build_Week_Gruppo_A.admin
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Button ModificaProdotto = (Button)sender;
-            int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
+            Button EliminaProdotto = (Button)sender;
+            int idProdotto = Convert.ToInt32(EliminaProdotto.CommandArgument);
 
             
             SqlConnection connessioneDB = new SqlConnection();
