@@ -240,6 +240,8 @@ namespace Build_Week_Gruppo_A.admin
                 Label_RigheInteressate.Text = ex.Message;
             }
 
+                Response.Redirect("ListaProdotto.aspx");
+
             }
 
 
