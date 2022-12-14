@@ -12,13 +12,13 @@ namespace Build_Week_Gruppo_A.admin
 {
     public partial class ListaProdotti : System.Web.UI.Page
     {
+               
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
 
-
-                List<Prodotto> ListaProdottiAdmin = new List<Prodotto>();
+                Prodotto.ListaProdotti.Clear();
                 SqlConnection connessioneDB = new SqlConnection();
                 connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
                 try
@@ -47,7 +47,8 @@ namespace Build_Week_Gruppo_A.admin
                             
 
 
-                            ListaProdottiAdmin.Add(prodottoAdmin);
+                            Prodotto.ListaProdotti.Add(prodottoAdmin);
+                            
                         }
                     }
 
@@ -55,7 +56,7 @@ namespace Build_Week_Gruppo_A.admin
 
 
 
-                    GridView_ListaProdotti.DataSource = ListaProdottiAdmin;
+                    GridView_ListaProdotti.DataSource = Prodotto.ListaProdotti;
                     GridView_ListaProdotti.DataBind();
                 }
                 catch { }
@@ -84,6 +85,7 @@ namespace Build_Week_Gruppo_A.admin
             Button ModificaProdotto = (Button)sender;
             int idProdotto = Convert.ToInt32(ModificaProdotto.CommandArgument);
 
+            
             SqlConnection connessioneDB = new SqlConnection();
             connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
             connessioneDB.Open();
@@ -93,6 +95,13 @@ namespace Build_Week_Gruppo_A.admin
             command.Connection = connessioneDB;
 
             command.ExecuteNonQuery();
+
+            GridView_ListaProdotti.DataSource = Prodotto.ListaProdotti;
+            GridView_ListaProdotti.DataBind();
+
+            connessioneDB.Close();
+
+            Response.Redirect("ListaProdotti.aspx");
 
 
         }

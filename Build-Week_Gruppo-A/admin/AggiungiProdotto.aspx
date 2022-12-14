@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-3">
         <div>
+            <a href="ListaProdotti.aspx">Torna a Lista Prodotti</a>
             <asp:TextBox ID="TEXTBOX_Marca" CssClass="form-control" placeholder="Marca" runat="server"></asp:TextBox>
             <asp:TextBox ID="TEXTBOX_Modello" CssClass="form-control" placeholder="Modello" runat="server"></asp:TextBox>
             <asp:TextBox ID="TEXTBOX_Descrizione" CssClass="form-control" placeholder="Descrizione" runat="server"></asp:TextBox>
