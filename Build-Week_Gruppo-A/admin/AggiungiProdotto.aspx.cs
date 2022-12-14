@@ -46,6 +46,7 @@ namespace Build_Week_Gruppo_A.admin
                 if (Request.QueryString["IdProdotto"] != null)
                 {   string idQuery = Request.QueryString["IdProdotto"];
 
+
                     SqlConnection connessioneDBModifica = new SqlConnection();
                     connessioneDBModifica.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
                     connessioneDBModifica.Open();
@@ -64,7 +65,7 @@ namespace Build_Week_Gruppo_A.admin
                             TEXTBOX_Marca.Text = readerModifica["Marca"].ToString();
                             TEXTBOX_Modello.Text = readerModifica["Modello"].ToString();
                             TEXTBOX_Descrizione.Text = readerModifica["Descrizione"].ToString();
-                            TEXTBOX_PrezzoVendita.Text = readerModifica["PrezzoVendita"].ToString();
+                            TEXTBOX_PrezzoVendita.Text = Math.Floor(Convert.ToDouble(readerModifica["PrezzoVendita"])).ToString();
                             CheckBox_InPromozione.Checked = Convert.ToBoolean(readerModifica["InPromozione"]);
                             DropDownList_Categoria.SelectedValue = readerModifica["ID_Categoria"].ToString();
                             TEXTBOX_PrezzoPrecedente.Text = readerModifica["PrezzoPrecedente"].ToString();
