@@ -15,7 +15,7 @@
                             <h2 class="card-title"><asp:Label ID="Nome" runat="server" Text="" Font-Bold="true" Font-Size="30px"></asp:Label></h2>
                             <p class="card-text"><asp:Label ID="Descrizione" runat="server" Text=""></asp:Label></p>
                             <p class="card-text">Prezzo: <asp:Label ID="Prezzo" runat="server" Text="" Font-Bold="true"></asp:Label></p>
-                            <asp:Button ID="AddProduct" runat="server" Text="Aggiungi al Carrello" OnClick="AddProduct_Click"  />
+                            <asp:Button ID="AddProduct" CssClass="btn btn-success"  runat="server" Text="Aggiungi al Carrello" OnClick="AddProduct_Click"  />
                             
                         </div>
                     </div>

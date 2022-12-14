@@ -87,6 +87,15 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_Carrello;
 
         /// <summary>
+        /// Controllo Label_CounterCarrello.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_CounterCarrello;
+
+        /// <summary>
         /// Controllo LinkButton_Admin.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,24 @@ namespace Build_Week_Gruppo_A
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_Admin;
+
+        /// <summary>
+        /// Controllo TextBox_CercaChitarraDARK.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_CercaChitarraDARK;
+
+        /// <summary>
+        /// Controllo Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Controllo Repeater_NavbarCategorie.

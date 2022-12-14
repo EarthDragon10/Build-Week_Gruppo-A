@@ -14,8 +14,13 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
+                Label_CounterCarrello.Text = Prodotto.CarrelloUtente.Count.ToString();
+                Label_CounterCarrello.DataBind();
+
             if (!IsPostBack)
             {
+                
                 if (Request.Cookies["Utente_Loggato"] != null && (Request.Cookies["Utente_Loggato"]["Ruolo"] == "admin"))
                 {
                     LinkButton_Admin.Visible = true;

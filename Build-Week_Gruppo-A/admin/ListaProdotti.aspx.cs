@@ -42,6 +42,7 @@ namespace Build_Week_Gruppo_A.admin
                             prodottoAdmin.Marca = prodottiTable["Marca"].ToString();
                             prodottoAdmin.Modello = prodottiTable["Modello"].ToString();
                             prodottoAdmin.PrezzoVendita = Convert.ToDecimal(prodottiTable["PrezzoVendita"]);
+                            prodottoAdmin.PrezzoPrecedente = Convert.ToDecimal(prodottiTable["PrezzoPrecedente"]);
                             prodottoAdmin.InPromozione = Convert.ToBoolean(prodottiTable["InPromozione"]);
                             prodottoAdmin.Tipologia = prodottiTable["Tipologia"].ToString();
                             

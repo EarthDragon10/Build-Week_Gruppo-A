@@ -29,8 +29,8 @@
                             <asp:Label  Text='<%# "SCONTATO AL " + Math.Floor((Item.PrezzoPrecedente - Item.PrezzoVendita) * 100 / Item.PrezzoPrecedente) +"%" %>' Font-Bold="true" ForeColor="Green" Visible="<%#Item.InPromozione %>" runat="server" /> <br />
                             <asp:Label  Text='<%# "Risparmio: " + (Item.PrezzoPrecedente - Item.PrezzoVendita).ToString("c2") %>' Visible="<%#Item.InPromozione %>" runat="server" /> <br />
 
-                            <a href="DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>" class="btn btn-primary"> Dettagli Prodotto </a>
-                            <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" CommandArgument="<%#Item.ID_Prodotto %>" runat="server" CssClass="btn btn-success" Text="Aggiungi al carrello" />
+                            <a href="../DettaglioProdotto.aspx?Id=<%# Item.ID_Prodotto %>" class="btn btn-sm btn-dark"> Dettagli </a>
+                            <asp:Button ID="Button_AggiungiCarrello" OnClick="Button_AggiungiCarrello_Click" CommandArgument="<%#Item.ID_Prodotto %>" runat="server" CssClass="btn btn-sm btn-success" Text="Aggiungi al carrello" />
 
                         </div>
                     </div>

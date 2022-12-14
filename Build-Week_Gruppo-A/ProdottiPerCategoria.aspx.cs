@@ -37,6 +37,7 @@ namespace Build_Week_Gruppo_A
                         p.Marca = reader["Marca"].ToString();
                         p.Modello = reader["Modello"].ToString();
                         p.PrezzoVendita = Convert.ToDecimal(reader["PrezzoVendita"]);
+                        p.PrezzoPrecedente = Convert.ToDecimal(reader["PrezzoPrecedente"]);
                         p.URLImg = reader["URLImg"].ToString();
                         p.Descrizione = reader["Descrizione"].ToString();
                         p.InPromozione = Convert.ToBoolean(reader["InPromozione"]);
@@ -55,14 +56,22 @@ namespace Build_Week_Gruppo_A
             }
         }
 
-        protected void Button_DettagliProdotto_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void Button_AggiungiCarrello_Click(object sender, EventArgs e)
         {
+            Button AggiungiCarrello = (Button)sender;
+            int idProdottoAggiunto = Convert.ToInt32(AggiungiCarrello.CommandArgument);
+            string IdCategoria = Request.QueryString["IdCategoria"];
 
+            foreach (Prodotto chitarra in Prodotto.ListaProdotti)
+            {
+                if (chitarra.ID_Prodotto == Convert.ToInt32(idProdottoAggiunto))
+                {
+                    Prodotto.CarrelloUtente.Add(chitarra);
+                    Response.Redirect($"/ProdottiPerCategoria.aspx?IdCategoria={IdCategoria}");
+
+                }
+            }
         }
     }
     }

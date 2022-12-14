@@ -346,6 +346,8 @@ namespace Build_Week_Gruppo_A.admin
                 CheckBox_InPromozione.Visible = false;
                 FileUpload_Image.Visible = false;
                 CheckBox_EliminaCategoriaByName.Visible = false;
+
+                Button_AggiungiProdotto.Text = "Crea Categoria";
             }
             else
             {
@@ -358,6 +360,8 @@ namespace Build_Week_Gruppo_A.admin
                 CheckBox_InPromozione.Visible = true;
                 FileUpload_Image.Visible = true;
                 CheckBox_EliminaCategoriaByName.Visible = true;
+
+                Button_AggiungiProdotto.Text = "Aggiungi Prodotto";
             }
         }
 
@@ -377,7 +381,7 @@ namespace Build_Week_Gruppo_A.admin
                 DropDownList_EliminaCategoria.Visible = true;
                 CheckBox_AggiungiCategoria.Visible = false;
 
-
+                Button_AggiungiProdotto.Text = "Elimina";
             }
             else
             {
@@ -391,6 +395,9 @@ namespace Build_Week_Gruppo_A.admin
                 FileUpload_Image.Visible = true;
                 DropDownList_EliminaCategoria.Visible = false;
                 CheckBox_AggiungiCategoria.Visible = true;
+
+                Button_AggiungiProdotto.Text = "Aggiungi Prodotto";
+
             }
         }
     }

@@ -38,7 +38,8 @@ namespace Build_Week_Gruppo_A
                 if (a.ID_Prodotto == Convert.ToInt32(id))
                 {
                     Prodotto.CarrelloUtente.Add(a);
-                    
+                    Response.Redirect($"/DettaglioProdotto.aspx?Id={id}");
+
                 }
             }
         }

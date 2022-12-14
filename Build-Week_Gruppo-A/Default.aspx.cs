@@ -37,6 +37,7 @@ namespace Build_Week_Gruppo_A
                         p.Marca = reader["Marca"].ToString();
                         p.Modello = reader["Modello"].ToString() ;
                         p.PrezzoVendita = Convert.ToDecimal(reader["PrezzoVendita"]);
+                        p.PrezzoPrecedente = Convert.ToDecimal(reader["PrezzoPrecedente"]);
                         p.URLImg = reader["URLImg"].ToString();
                         p.Descrizione = reader["Descrizione"].ToString();
                         p.InPromozione = Convert.ToBoolean(reader["InPromozione"]);
@@ -69,6 +70,7 @@ namespace Build_Week_Gruppo_A
                 if (chitarra.ID_Prodotto == Convert.ToInt32(idProdottoAggiunto))
                 {
                     Prodotto.CarrelloUtente.Add(chitarra);
+                    Response.Redirect("/Default.aspx");
 
                 }
             }
