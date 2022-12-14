@@ -10,7 +10,7 @@
                 <asp:TextBox ID="TextBox_Password" CssClass="form-control mt-1" placeholder="Password" runat="server"></asp:TextBox>
                 <asp:CheckBox ID="CheckBox_RicordamiAccedi" runat="server" /> <span style="font-size:12px">Ricordami</span>
                 <asp:Button ID="Button_Accedi" CssClass="w-100 btn btn-lg btn-dark" Text="Accedi" OnClick="Button_Accedi_Click" runat="server" />
-                <p class="text-center">Non sei registrato? <a href="~/Registrazione.aspx">Registrati</a></p>
+                <p class="text-center">Non sei registrato? <a href="/Registrazione.aspx">Registrati</a></p>
                 <asp:Label ID="Label_ERROR" runat="server" Text=""></asp:Label>
             </div>
         </div>

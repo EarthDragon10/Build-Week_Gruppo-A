@@ -51,6 +51,24 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Label Prezzo;
 
         /// <summary>
+        /// Controllo Label_PrezzoPrecedenteBOX.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PrezzoPrecedenteBOX;
+
+        /// <summary>
+        /// Controllo Label_PrezzoPrecedente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PrezzoPrecedente;
+
+        /// <summary>
         /// Controllo AddProduct.
         /// </summary>
         /// <remarks>

@@ -25,6 +25,14 @@ namespace Build_Week_Gruppo_A
                     Nome.Text = item.Marca + item.Modello;
                     Descrizione.Text = item.Descrizione;
                     Prezzo.Text = item.PrezzoVendita.ToString("c2");
+                    if (item.InPromozione) {
+
+                        Label_PrezzoPrecedenteBOX.Visible = true;
+                        Label_PrezzoPrecedente.Text = item.PrezzoPrecedente.ToString("c2");
+                    } else
+                    {
+                        Label_PrezzoPrecedenteBOX.Visible = false;
+                    }
                 }
             }
         }
