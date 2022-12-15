@@ -27,7 +27,7 @@
               </button>
             </div>--%>
               <asp:LinkButton CssClass="mb-3" ID="LinkButton_ModificaPassword" PostBackUrl="#" runat="server" >Modifica Password</asp:LinkButton> <br />
-              <asp:Button ID="Button_iTuoiOrdini" CssClass="btn btn-dark btn-rounded btn-lg mt-5 mb-2" runat="server" Text="I tuoi ordini" /> <br />
+              <asp:Button ID="Button_iTuoiOrdini" CssClass="btn btn-dark btn-rounded btn-lg mt-5 mb-2" OnClick="Button_iTuoiOrdini_Click" runat="server" Text="I tuoi ordini" /> <br />
 
               <asp:LinkButton OnClick="LinkButton_Logout_Click" CssClass="mt-3 " ID="LinkButton_Logout" PostBackUrl="#" runat="server" >Esci</asp:LinkButton> <br />
               

@@ -41,7 +41,7 @@
         <div>
             <p class="float-end bg-light rounded ps-2">Totale:
                 <asp:Label ID="lblTotCarrello" runat="server" Text="" Font-Bold="true"></asp:Label>
-                <asp:Button CssClass="btn btn-success" ID="Button_EffettuaOrdine" runat="server" Text="Effettua Ordine" />
+                <asp:Button OnClick="Button_EffettuaOrdine_Click" CssClass="btn btn-success" ID="Button_EffettuaOrdine" runat="server" Text="Effettua Ordine" />
             </p>
             
         </div>

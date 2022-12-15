@@ -17,12 +17,12 @@
                 </asp:TemplateField>            
                 <asp:TemplateField HeaderText="Data Ordine">
                     <ItemTemplate>
-                        <p><%# Item.DataOrdine %></p>
+                        <p><%# Item.DataOrdine.ToString("d") %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Totale Ordine">
                     <ItemTemplate>
-                        <p><%# Item.TotaleOrdine %></p>
+                        <p><%# Item.TotaleOrdine.ToString("c2") %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

@@ -51,5 +51,10 @@ namespace Build_Week_Gruppo_A
             Response.Cookies.Add(LogoutCookie);
             Response.Redirect("~/Default.aspx");
         }
+
+        protected void Button_iTuoiOrdini_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("./ListaOrdini.aspx");
+        }
     }
 }

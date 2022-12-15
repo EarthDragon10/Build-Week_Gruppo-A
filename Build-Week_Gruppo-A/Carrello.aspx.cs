@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,6 +55,45 @@ namespace Build_Week_Gruppo_A
             Prodotto.CarrelloUtente.Clear();
             Response.Redirect("~/Carrello.aspx");
        
+        }
+
+        protected void Button_EffettuaOrdine_Click(object sender, EventArgs e)
+        {
+
+            SqlConnection connessioneDB = new SqlConnection();
+            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+            connessioneDB.Open();
+
+            SqlCommand command = new SqlCommand();
+
+            decimal Tot = 0;
+
+
+            foreach (Prodotto item in Prodotto.CarrelloUtente)
+            {
+                Tot += item.PrezzoVendita;
+            }
+
+            command.Parameters.AddWithValue("@ID_Utente", Request.Cookies["Utente_Loggato"]["ID_Utente"]);
+            command.Parameters.AddWithValue("@DataOrdine", DateTime.Now.Date);         
+
+            command.Parameters.AddWithValue("@TotaleOrdine", Tot);
+            command.CommandText = "INSERT INTO Ordine VALUES (@ID_Utente, @DataOrdine, @TotaleOrdine)";
+            command.Connection = connessioneDB;
+
+            int righeInteressate = command.ExecuteNonQuery();
+
+            if (righeInteressate > 0)
+            {
+                //Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+            }
+            else
+            {
+                //Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+            }
+
+            connessioneDB.Close();
+
         }
     }
 }

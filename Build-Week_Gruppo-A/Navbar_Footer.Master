@@ -130,7 +130,7 @@
 
             <%-- NAVBAR DARK DELLE CATEGORIE  --%>
 
-             <nav class="navbar navbar-expand-lg bg-dark text-white position-sticky " style="top:68px; z-index:10">
+             <nav class="navbar navbar-expand-lg bg-dark text-white position-sticky mb-5" style="top:68px; z-index:10">
                 <div class="container">
                   
                      <div class="d-flex d-lg-none w-100 ">
@@ -146,7 +146,7 @@
                          <a class="nav-link mx-2" href='../Default.aspx'>Home</a>
                         <asp:Repeater ItemType="Build_Week_Gruppo_A.Categoria" ID="Repeater_NavbarCategorie" runat="server">
                             <ItemTemplate>
-                                <a class="nav-link mx-2" href='ProdottiPerCategoria.aspx?IdCategoria=<%# Item.ID_Categoria %>'><%# Item.Tipologia %></a>
+                                <a class="nav-link mx-2" href='../ProdottiPerCategoria.aspx?IdCategoria=<%# Item.ID_Categoria %>'><%# Item.Tipologia %></a>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>

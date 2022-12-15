@@ -13,6 +13,8 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Ordine.listaOrdini.Clear();
+
             SqlConnection connectionDB = new SqlConnection();
             connectionDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
             connectionDB.Open();
@@ -32,10 +34,14 @@ namespace Build_Week_Gruppo_A
                     Ordine ordine = new Ordine();
                     ordine.ID_Ordine = Convert.ToInt32(reader["ID_Ordine"]);
                     ordine.ID_Utente = Convert.ToInt32(reader["ID_Utente"]);
-                    ordine.DataOrdine = Convert.ToDateTime(reader["DataOrdine"]);
+                    ordine.DataOrdine = Convert.ToDateTime(reader["DataOrdine"].ToString());
                     ordine.TotaleOrdine = Convert.ToDecimal(reader["TotaleOrdine"]);
+                    Ordine.listaOrdini.Add(ordine);
                 }
             }
+
+            GridCarrello.DataSource = Ordine.listaOrdini;
+            GridCarrello.DataBind();
 
             connectionDB.Close();
         }
