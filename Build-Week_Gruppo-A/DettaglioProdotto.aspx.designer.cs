@@ -15,15 +15,6 @@ namespace Build_Week_Gruppo_A
     {
 
         /// <summary>
-        /// Controllo Image1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
-        /// <summary>
         /// Controllo Nome.
         /// </summary>
         /// <remarks>
@@ -69,6 +60,15 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Label Label_PrezzoPrecedente;
 
         /// <summary>
+        /// Controllo DropDownList1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
         /// Controllo AddProduct.
         /// </summary>
         /// <remarks>
@@ -76,5 +76,14 @@ namespace Build_Week_Gruppo_A
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddProduct;
+
+        /// <summary>
+        /// Controllo Image1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }
