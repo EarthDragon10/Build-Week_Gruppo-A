@@ -8,7 +8,7 @@
                 <div class="row g-0">
                     <div class="col-4">
                         
-                        <asp:Image ID="Image1" runat="server" Width="200" />
+                        <asp:Image ID="Image1" CssClass="ms-5 py-5" runat="server" Width="200" />
                     </div>
                     <div class="col-8">
                         <div class="card-body mt-5">

@@ -120,6 +120,7 @@
     <Content Include="img\9.jpg" />
     <Content Include="img\Musicalita.png" />
     <Content Include="img\sfondo2.png" />
+    <Content Include="ListaOrdini.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ProdottiPerCategoria.aspx" />
     <Content Include="Registrazione.aspx" />
@@ -162,6 +163,7 @@
       <DependentUpon>Carrello.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Ordine.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,6 +187,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdini.aspx.cs">
+      <DependentUpon>ListaOrdini.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaOrdini.aspx.designer.cs">
+      <DependentUpon>ListaOrdini.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
