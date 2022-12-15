@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace Build_Week_Gruppo_A
 {
@@ -15,7 +16,11 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+            if (Request.Cookies["Utente_Loggato"] != null)
+            {
+                Response.Redirect("/DettagliUtente.aspx");
+            }
         }
 
         protected void Button_Accedi_Click(object sender, EventArgs e)
@@ -48,6 +53,7 @@ namespace Build_Week_Gruppo_A
                     HttpCookie UtenteLoggato = new HttpCookie("Utente_Loggato");
                     UtenteLoggato.Values["Nome"] = record["Nome"].ToString();
                     UtenteLoggato.Values["Ruolo"] = record["Ruolo"].ToString();
+                    UtenteLoggato.Values["ID_Utente"] = record["ID_Utente"].ToString();
                     Response.Cookies.Add(UtenteLoggato);
                     connessioneDB.Close();
                     Response.Redirect("/Default.aspx");

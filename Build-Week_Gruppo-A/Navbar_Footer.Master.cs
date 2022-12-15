@@ -16,6 +16,13 @@ namespace Build_Week_Gruppo_A
         protected void Page_Load(object sender, EventArgs e)
         {
           
+                if (Prodotto.CarrelloUtente.Count > 0)
+            {
+                Label_BadgeCarrello.Visible = true;
+            } else
+            {
+                Label_BadgeCarrello.Visible = false;
+            }
                 Label_CounterCarrello.Text = Prodotto.CarrelloUtente.Count.ToString();
                 Label_CounterCarrello.DataBind();
 

@@ -1,16 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Navbar_Footer.Master" AutoEventWireup="true" CodeBehind="Carrello.aspx.cs" Inherits="Build_Week_Gruppo_A.Carrello" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+       .container-tabella {
+           overflow:hidden;
+           border-radius: 1em!important;
+       }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
+     <div class="container ">
         <a href="../Default.aspx"><asp:Label ID="lblEmptyCart" runat="server" Text="Il tuo carrello è vuoto... Torna alla pagina prodotti"></asp:Label></a><hr />
-        <asp:GridView ID="GridCarrello" CssClass="table table-bordered table-striped" runat="server"
+        <asp:GridView ID="GridCarrello" CssClass="table table-bordered  table-striped table-light container-tabella " runat="server"
             AutoGenerateColumns="false" ItemType="Build_Week_Gruppo_A.Prodotto" Visible="true">
             <Columns>
                 
                 <asp:TemplateField HeaderText="Marca">
                     <ItemTemplate>
-                        <p><%# Item.Marca %></p>
+                        <p class="ps-2"><%# Item.Marca %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
                  <asp:TemplateField HeaderText="Prodotto">
@@ -29,11 +35,11 @@
     </div>
     <div class="container">
         <div>
-            <p class="float-end">Totale da pagare:
+            <p class="float-end btn btn-light">Totale da pagare:
                 <asp:Label ID="lblTotCarrello" runat="server" Text="" Font-Bold="true"></asp:Label></p>
         </div>
         <div>
-            <asp:Button ID="Delete" runat="server" Text="Svuota Carrello" OnClick="Delete_Click" CssClass="border " Visible="true" />
+            <asp:Button ID="Delete" runat="server" Text="Svuota Carrello" OnClick="Delete_Click" CssClass="border btn btn-dark " Visible="true" />
         </div>
     </div>
 </asp:Content>

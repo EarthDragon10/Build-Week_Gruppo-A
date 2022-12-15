@@ -89,6 +89,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="DettaglioProdotto.aspx" />
+    <Content Include="DettagliUtente.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\1.jpg" />
     <Content Include="img\10.jpg" />
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="DettaglioProdotto.aspx.designer.cs">
       <DependentUpon>DettaglioProdotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DettagliUtente.aspx.cs">
+      <DependentUpon>DettagliUtente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DettagliUtente.aspx.designer.cs">
+      <DependentUpon>DettagliUtente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

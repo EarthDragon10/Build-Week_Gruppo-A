@@ -87,6 +87,15 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_Carrello;
 
         /// <summary>
+        /// Controllo Label_BadgeCarrello.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_BadgeCarrello;
+
+        /// <summary>
         /// Controllo Label_CounterCarrello.
         /// </summary>
         /// <remarks>

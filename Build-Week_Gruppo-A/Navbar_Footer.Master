@@ -105,7 +105,7 @@
 
                     <div class="d-flex align-items-center">
                         <asp:LinkButton runat="server" CssClass="btn btn-sm mx-2"  ID="LinkButton_Login" PostBackUrl="~/Login.aspx"><i class="bi bi-person-circle"></i></asp:LinkButton>
-                        <a class="navbar-brand" style="font-size: 14px; font-weight: bold" href="../Default.aspx">Benvenuto,
+                        <a class="navbar-brand" style="font-size: 14px; font-weight: bold" href="../Login.aspx">Benvenuto,
                             <asp:Label ID="Label_NomeCookie" runat="server" Text="Utente"></asp:Label></a>
                             <asp:Button ID="Button_LogoutCookie" OnClick="Button_LogoutCookie_Click" Visible="false" runat="server" CssClass="btn btn-outline-light btn-sm" ForeColor="red" Text="❌"></asp:Button>
                     </div>
@@ -115,9 +115,14 @@
                         <i class="bi bi-search"></i>
                     </div>
                     <div class="d-flex align-items-center">
-                        <asp:LinkButton runat="server" CssClass="btn btn-sm mx-2" ID="LinkButton_Carrello" PostBackUrl="~/Carrello.aspx"><i class="bi bi-cart"></i><span style="top:23px" class="position-absolute  translate-middle badge rounded-pill bg-danger">
-                            <asp:Label ID="Label_CounterCarrello" runat="server" Text="0"></asp:Label>
-                        </span></asp:LinkButton>
+                        <asp:LinkButton runat="server" CssClass="btn btn-sm mx-2" ID="LinkButton_Carrello" PostBackUrl="~/Carrello.aspx">
+                            <i class="bi bi-cart"></i>
+                            <asp:Label Visible="false" ID="Label_BadgeCarrello" runat="server">
+                                <span style="top: 23px" class="position-absolute  translate-middle badge rounded-pill bg-danger">
+                                    <asp:Label ID="Label_CounterCarrello" runat="server" Text="0"></asp:Label>
+                                </span>
+                            </asp:Label>
+                        </asp:LinkButton>
                         <asp:LinkButton runat="server" Visible="false" CssClass="btn btn-sm btn-outline-dark" Text="🤖" ID="LinkButton_Admin" PostBackUrl="~/admin/ListaProdotti.aspx"></asp:LinkButton>
                     </div>
                 </div>
