@@ -71,9 +71,9 @@ namespace Build_Week_Gruppo_A
                 {
                     Prodotto.CarrelloUtente.Add(chitarra);
                     Response.Redirect("/Default.aspx");
-
                 }
             }
+
         }
 
         

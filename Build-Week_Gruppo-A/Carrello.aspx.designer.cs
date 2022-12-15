@@ -42,6 +42,15 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Label lblTotCarrello;
 
         /// <summary>
+        /// Controllo Button_EffettuaOrdine.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_EffettuaOrdine;
+
+        /// <summary>
         /// Controllo Delete.
         /// </summary>
         /// <remarks>

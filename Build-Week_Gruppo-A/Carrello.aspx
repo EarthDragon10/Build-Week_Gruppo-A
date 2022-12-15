@@ -13,13 +13,12 @@
         <asp:GridView ID="GridCarrello" CssClass="table table-bordered  table-striped table-light container-tabella " runat="server"
             AutoGenerateColumns="false" ItemType="Build_Week_Gruppo_A.Prodotto" Visible="true">
             <Columns>
-                
                 <asp:TemplateField HeaderText="Marca">
                     <ItemTemplate>
                         <p class="ps-2"><%# Item.Marca %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
-                 <asp:TemplateField HeaderText="Prodotto">
+                 <asp:TemplateField HeaderText="Modello">
                     <ItemTemplate>
                         <p><%# Item.Modello %></p>
                     </ItemTemplate>
@@ -29,14 +28,22 @@
                         <p><%# Item.PrezzoVendita.ToString("c2") %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField HeaderText="Quantita">
+                    <ItemTemplate>
+                        <p></p>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
 
     </div>
     <div class="container">
         <div>
-            <p class="float-end btn btn-light">Totale da pagare:
-                <asp:Label ID="lblTotCarrello" runat="server" Text="" Font-Bold="true"></asp:Label></p>
+            <p class="float-end bg-light rounded ps-2">Totale:
+                <asp:Label ID="lblTotCarrello" runat="server" Text="" Font-Bold="true"></asp:Label>
+                <asp:Button CssClass="btn btn-success" ID="Button_EffettuaOrdine" runat="server" Text="Effettua Ordine" />
+            </p>
+            
         </div>
         <div>
             <asp:Button ID="Delete" runat="server" Text="Svuota Carrello" OnClick="Delete_Click" CssClass="border btn btn-dark " Visible="true" />

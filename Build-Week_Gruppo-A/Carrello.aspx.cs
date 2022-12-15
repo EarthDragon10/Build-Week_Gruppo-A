@@ -11,6 +11,9 @@ namespace Build_Week_Gruppo_A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
             if(!IsPostBack)
             {
 
@@ -22,20 +25,18 @@ namespace Build_Week_Gruppo_A
                     lblTotCarrello.Text = 0.ToString("c2");
                 } 
                 else { 
+                   
                     Delete.Visible = true; 
                     lblEmptyCart.Visible = false; 
-                }
-
-
-                if (Prodotto.CarrelloUtente.Count != 0)
-                {
 
                     decimal Tot = 0;
+
 
                     foreach (Prodotto item in Prodotto.CarrelloUtente)
                     {
                         Tot += item.PrezzoVendita;
                     }
+
 
                     lblTotCarrello.Text = Tot.ToString("c2");
                 }
