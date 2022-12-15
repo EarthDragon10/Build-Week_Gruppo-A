@@ -80,6 +80,16 @@
     .container-footer{
         box-shadow: -2px -11px 31px 2px rgba(0,0,0,0.6)!important;
     }
+
+    .img-box img{
+        height: 90%;
+    }
+
+    .dettaglio-bottone-compra{
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
 </style>
 <html>
 <head runat="server">
