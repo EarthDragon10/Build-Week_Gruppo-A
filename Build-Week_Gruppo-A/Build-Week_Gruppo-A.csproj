@@ -88,6 +88,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DettaglioOrdine.aspx" />
     <Content Include="DettaglioProdotto.aspx" />
     <Content Include="DettagliUtente.aspx" />
     <Content Include="Global.asax" />
@@ -163,6 +164,13 @@
       <DependentUpon>Carrello.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categoria.cs" />
+    <Compile Include="DettaglioOrdine.aspx.cs">
+      <DependentUpon>DettaglioOrdine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DettaglioOrdine.aspx.designer.cs">
+      <DependentUpon>DettaglioOrdine.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Ordine.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

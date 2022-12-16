@@ -44,18 +44,7 @@ namespace Build_Week_Gruppo_A
 
                     lblTotCarrello.Text = Tot.ToString("c2");
 
-                    //int totQuantitaProdotti = 0;
-                    //for (int i = 0; i < Prodotto.CarrelloUtente.Count; i++)
-                    //{
-                    //    for (int j = 0; j < Prodotto.CarrelloUtente.Count; j++)
-                    //    {
-                    //        if (Prodotto.CarrelloUtente[i].ID_Prodotto == Prodotto.CarrelloUtente[j].ID_Prodotto)
-                    //        {
-                    //            totQuantitaProdotti++;
-                    //            Prodotto.CarrelloUtente[i].Quantità = totQuantitaProdotti;
-                    //        }
-                    //    }
-                    //}
+
                 }
                 GridCarrello.DataSource = Prodotto.CarrelloUtente;
                 GridCarrello.DataBind();
@@ -104,8 +93,36 @@ namespace Build_Week_Gruppo_A
                 command.CommandText = "INSERT INTO Ordine VALUES (@ID_Utente, @DataOrdine, @TotaleOrdine)";
                 command.Connection = connessioneDB;
 
-
                 int righeInteressate = command.ExecuteNonQuery();
+
+                SqlCommand commandSelectDettaglio = new SqlCommand();
+                commandSelectDettaglio.CommandText = "SELECT MAX(ID_Ordine) AS OrdineCreato FROM Ordine";
+                commandSelectDettaglio.Connection = connessioneDB;
+                SqlDataReader reader = commandSelectDettaglio.ExecuteReader();
+                int IdOrdine = 0;
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        IdOrdine = Convert.ToInt32(reader["OrdineCreato"]);
+                    }
+                }
+
+                SqlCommand commandInsertDettaglio = new SqlCommand();
+                commandInsertDettaglio.Connection= connessioneDB;
+                foreach (Prodotto item in Prodotto.CarrelloUtente)
+                {
+                    commandInsertDettaglio.Parameters.Clear();
+                    commandInsertDettaglio.Parameters.AddWithValue("@ID_Ordine", IdOrdine);
+                    commandInsertDettaglio.Parameters.AddWithValue("@ID_Prodotto", item.ID_Prodotto);
+                    commandInsertDettaglio.Parameters.AddWithValue("@Quantita", item.Quantita);
+                    commandInsertDettaglio.CommandText = "INSERT INTO DettagliOrdine VALUES (@ID_Ordine, @ID_Prodotto, @Quantita)";
+                    commandInsertDettaglio.ExecuteNonQuery();
+                }
+
+
+                
+
 
                 if (righeInteressate > 0)
                 {

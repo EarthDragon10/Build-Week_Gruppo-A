@@ -345,9 +345,12 @@ namespace Build_Week_Gruppo_A.admin
                 TEXTBOX_PrezzoVendita.Visible = false;
                 CheckBox_InPromozione.Visible = false;
                 FileUpload_Image.Visible = false;
+                Label_Immagine.Visible = false;
+                TEXTBOX_PrezzoPrecedente.Visible = false;
                 CheckBox_EliminaCategoriaByName.Visible = false;
 
                 Button_AggiungiProdotto.Text = "Crea Categoria";
+                Button_ModificaProdotto.Text = "Crea Categoria";
             }
             else
             {
@@ -379,9 +382,12 @@ namespace Build_Week_Gruppo_A.admin
                 CheckBox_InPromozione.Visible = false;
                 FileUpload_Image.Visible = false;
                 DropDownList_EliminaCategoria.Visible = true;
+                Label_Immagine.Visible = false;
+                TEXTBOX_PrezzoPrecedente.Visible = false;
                 CheckBox_AggiungiCategoria.Visible = false;
 
                 Button_AggiungiProdotto.Text = "Elimina";
+                Button_ModificaProdotto.Text = "Elimina";
             }
             else
             {

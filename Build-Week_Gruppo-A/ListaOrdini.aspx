@@ -25,6 +25,12 @@
                         <p><%# Item.TotaleOrdine.ToString("c2") %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
+
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="Button_Dettaglio" runat="server" Text="Dettagli" OnClick="Button_Dettaglio_Click" CommandArgument="<%#Item.ID_Ordine %>" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     </div>
