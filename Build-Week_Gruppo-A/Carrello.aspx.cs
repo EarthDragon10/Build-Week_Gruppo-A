@@ -43,6 +43,19 @@ namespace Build_Week_Gruppo_A
 
 
                     lblTotCarrello.Text = Tot.ToString("c2");
+
+                    //int totQuantitaProdotti = 0;
+                    //for (int i = 0; i < Prodotto.CarrelloUtente.Count; i++)
+                    //{
+                    //    for (int j = 0; j < Prodotto.CarrelloUtente.Count; j++)
+                    //    {
+                    //        if (Prodotto.CarrelloUtente[i].ID_Prodotto == Prodotto.CarrelloUtente[j].ID_Prodotto)
+                    //        {
+                    //            totQuantitaProdotti++;
+                    //            Prodotto.CarrelloUtente[i].Quantità = totQuantitaProdotti;
+                    //        }
+                    //    }
+                    //}
                 }
                 GridCarrello.DataSource = Prodotto.CarrelloUtente;
                 GridCarrello.DataBind();
@@ -61,40 +74,55 @@ namespace Build_Week_Gruppo_A
         protected void Button_EffettuaOrdine_Click(object sender, EventArgs e)
         {
 
-            SqlConnection connessioneDB = new SqlConnection();
-            connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
-            connessioneDB.Open();
-
-            SqlCommand command = new SqlCommand();
-
-            decimal Tot = 0;
-
-
-            foreach (Prodotto item in Prodotto.CarrelloUtente)
+            if (Request.Cookies["Utente_Loggato"] == null)
             {
-                Tot += item.PrezzoVendita;
-            }
-
-            command.Parameters.AddWithValue("@ID_Utente", Request.Cookies["Utente_Loggato"]["ID_Utente"]);
-            command.Parameters.AddWithValue("@DataOrdine", DateTime.Now.Date);         
-
-            command.Parameters.AddWithValue("@TotaleOrdine", Tot);
-            command.CommandText = "INSERT INTO Ordine VALUES (@ID_Utente, @DataOrdine, @TotaleOrdine)";
-            command.Connection = connessioneDB;
-
-            int righeInteressate = command.ExecuteNonQuery();
-
-            if (righeInteressate > 0)
-            {
-                //Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                Response.Redirect("Login.aspx");
             }
             else
             {
-                //Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                SqlConnection connessioneDB = new SqlConnection();
+                connessioneDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
+                connessioneDB.Open();
+
+                SqlCommand command = new SqlCommand();
+
+                decimal Tot = 0;
+
+
+                foreach (Prodotto item in Prodotto.CarrelloUtente)
+                {
+                    Tot += item.PrezzoVendita;
+                }
+
+
+
+
+                command.Parameters.AddWithValue("@ID_Utente", Request.Cookies["Utente_Loggato"]["ID_Utente"]);
+                command.Parameters.AddWithValue("@DataOrdine", DateTime.Now.Date);
+
+                command.Parameters.AddWithValue("@TotaleOrdine", Tot);
+                command.CommandText = "INSERT INTO Ordine VALUES (@ID_Utente, @DataOrdine, @TotaleOrdine)";
+                command.Connection = connessioneDB;
+
+                int righeInteressate = command.ExecuteNonQuery();
+
+                if (righeInteressate > 0)
+                {
+                    Prodotto.CarrelloUtente.Clear();
+                    GridCarrello.DataSource = Prodotto.CarrelloUtente;
+                    GridCarrello.DataBind();
+                    //Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                }
+                else
+                {
+
+                    //Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                }
+
+                connessioneDB.Close();
+
+
             }
-
-            connessioneDB.Close();
-
         }
     }
 }

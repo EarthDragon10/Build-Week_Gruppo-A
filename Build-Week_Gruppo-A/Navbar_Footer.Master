@@ -189,9 +189,9 @@
 
 
             <%-- FOOTER  --%>
-            <div class="container-footer container-fluid bg-light shadow mt-4">
-                <footer class="text-center py-3 border-top">
-                     <span class=" text-muted text-center">© Dicembre 2022 - Giuseppe Di Pisa, Bruno Stano, Stefano Laguda, Nicola Lerra, Luigi Indaco</span>
+            <div class="container-footer container-fluid bg-light shadow">
+                <footer class="text-center py-3 mt-4 border-top">
+                     <span class=" text-muted text-center">© Dicembre 2022 - Giuseppe Di Pisa, Bruno Stano, Stefano Laguda, Nicola Lerra, Luigi Crisci</span>
                 </footer>
             </div>
         </div>

@@ -25,7 +25,7 @@
                                 <br />
                                 <asp:DropDownList ID="DropDownList1" CssClass="mb-2"  runat="server"  MaxLength="5">
                                     <asp:ListItem Enabled="true" Selected="True" Text="Quantità" Value="-1"></asp:ListItem>
-                                    <asp:ListItem Enabled="true" Text="" Value="" ></asp:ListItem>
+                                    <%--<asp:ListItem Enabled="true" Text="" Value="" ></asp:ListItem>--%>
                                     <asp:ListItem Enabled="true" Text="1" Value="1"></asp:ListItem>
                                     <asp:ListItem Enabled="true" Text="2" Value="2"></asp:ListItem>
                                     <asp:ListItem Enabled="true" Text="3" Value="3"></asp:ListItem>

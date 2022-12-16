@@ -68,6 +68,8 @@ namespace Build_Week_Gruppo_A
             {
                 if (chitarra.ID_Prodotto == Convert.ToInt32(idProdottoAggiunto))
                 {
+
+                    chitarra.Quantita = 1;
                     Prodotto.CarrelloUtente.Add(chitarra);
                     Response.Redirect("/Default.aspx");
                 }
