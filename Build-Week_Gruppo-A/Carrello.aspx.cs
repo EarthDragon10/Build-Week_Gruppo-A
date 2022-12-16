@@ -85,15 +85,20 @@ namespace Build_Week_Gruppo_A
 
             if (righeInteressate > 0)
             {
+                Prodotto.CarrelloUtente.Clear();
+                GridCarrello.DataSource = Prodotto.CarrelloUtente;
+                GridCarrello.DataBind();
                 //Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
             }
             else
             {
+
                 //Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
             }
 
             connessioneDB.Close();
 
+            
         }
     }
 }
