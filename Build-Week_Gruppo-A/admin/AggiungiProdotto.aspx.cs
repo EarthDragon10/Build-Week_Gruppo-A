@@ -139,11 +139,11 @@ namespace Build_Week_Gruppo_A.admin
 
                     if (righeInteressate > 0)
                     {
-                        Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                        Label_RigheInteressate.Text = "Inserimento effettuato con successo.";
                     }
                     else
                     {
-                        Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                        Label_RigheInteressate.Text = "inserimento non effettuato.";
                     }
 
                     connessioneDB.Close();

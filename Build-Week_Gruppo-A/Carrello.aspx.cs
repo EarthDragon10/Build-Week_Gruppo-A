@@ -129,12 +129,13 @@ namespace Build_Week_Gruppo_A
                     Prodotto.CarrelloUtente.Clear();
                     GridCarrello.DataSource = Prodotto.CarrelloUtente;
                     GridCarrello.DataBind();
-                    //Label_RigheInteressate.Text = "Inserimento effettuato sul cesso.";
+                    Label_RigheInteressate.Visible = true;
+                    Label_RigheInteressate.Text = "Ordine Effettuato.";
                 }
                 else
                 {
-
-                    //Label_RigheInteressate.Text = "Hai cagato fuori dal vaso.";
+                    Label_RigheInteressate.Visible = true;
+                    Label_RigheInteressate.Text = "Si è verificato un problema.";
                 }
 
                 connessioneDB.Close();

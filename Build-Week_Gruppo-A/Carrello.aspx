@@ -36,6 +36,8 @@
             </Columns>
         </asp:GridView>
 
+         <asp:Label ID="Label_RigheInteressate" runat="server" Visible="false" Text=""></asp:Label>
+
     </div>
     <div class="container">
         <div>
