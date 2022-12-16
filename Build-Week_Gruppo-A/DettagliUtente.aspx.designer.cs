@@ -51,6 +51,51 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_ModificaPassword;
 
         /// <summary>
+        /// Controllo modificapswBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modificapswBox;
+
+        /// <summary>
+        /// Controllo oldPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox oldPassword;
+
+        /// <summary>
+        /// Controllo ErroreOldPsw.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErroreOldPsw;
+
+        /// <summary>
+        /// Controllo newPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox newPassword;
+
+        /// <summary>
+        /// Controllo ModificaPwd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ModificaPwd;
+
+        /// <summary>
         /// Controllo Button_iTuoiOrdini.
         /// </summary>
         /// <remarks>

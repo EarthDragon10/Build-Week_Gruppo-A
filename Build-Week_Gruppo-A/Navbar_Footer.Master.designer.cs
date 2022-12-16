@@ -51,13 +51,13 @@ namespace Build_Week_Gruppo_A
         protected global::System.Web.UI.WebControls.Label Label_NomeCookie;
 
         /// <summary>
-        /// Controllo Button_LogoutCookie.
+        /// Controllo LinkButton_Logout.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_LogoutCookie;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton_Logout;
 
         /// <summary>
         /// Controllo TextBox_CercaChitarra.

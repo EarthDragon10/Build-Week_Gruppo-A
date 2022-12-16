@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container mt-2">
         <div class="row justify-content-center">
-            <div style="max-width: 300px">
+            <div id="register-container" style="max-width: 80%;" class="d-flex flex-wrap justify-content-between">
                 <asp:TextBox ID="TEXTBOX_Nome" CssClass="form-control mt-2" placeholder="Nome" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator Display="Dynamic" ID="Nome_Validator" runat="server" ErrorMessage="Campo richiesto" ValidationGroup="Dati_Registrazione" ControlToValidate="TEXTBOX_Nome"></asp:RequiredFieldValidator>
                 <asp:TextBox ID="TEXTBOX_Cognome" CssClass="form-control mt-2" placeholder="Cognome" runat="server"></asp:TextBox>

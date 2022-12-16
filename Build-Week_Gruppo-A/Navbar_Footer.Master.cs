@@ -32,12 +32,12 @@ namespace Build_Week_Gruppo_A
                 if (Request.Cookies["Utente_Loggato"] != null && (Request.Cookies["Utente_Loggato"]["Ruolo"] == "admin"))
                 {
                     LinkButton_Admin.Visible = true;
-                    Button_LogoutCookie.Visible = true;
+                    LinkButton_Logout.Visible = true;
                     Label_NomeCookie.Text = Request.Cookies["Utente_Loggato"]["Nome"];
                 }
                 if (Request.Cookies["Utente_Loggato"] != null)
                 {
-                    Button_LogoutCookie.Visible = true;
+                    LinkButton_Logout.Visible = true;
                     Label_NomeCookie.Text = Request.Cookies["Utente_Loggato"]["Nome"];
                 }
 

@@ -54,6 +54,7 @@ namespace Build_Week_Gruppo_A
                     UtenteLoggato.Values["Nome"] = record["Nome"].ToString();
                     UtenteLoggato.Values["Ruolo"] = record["Ruolo"].ToString();
                     UtenteLoggato.Values["ID_Utente"] = record["ID_Utente"].ToString();
+                    UtenteLoggato.Values["Password_Utente"] = record["Psw"].ToString();
                     Response.Cookies.Add(UtenteLoggato);
                     connessioneDB.Close();
                     Response.Redirect("/Default.aspx");

@@ -25,6 +25,7 @@ namespace Build_Week_Gruppo_A
                 {
                     Delete.Visible = false;
                     lblEmptyCart.Visible = true;
+                    Button_EffettuaOrdine.Visible = false;
                     lblTotCarrello.Text = 0.ToString("c2");
                 } 
                 else { 

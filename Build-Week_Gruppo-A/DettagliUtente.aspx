@@ -26,7 +26,16 @@
                 <i class="fab fa-skype fa-lg"></i>
               </button>
             </div>--%>
-              <asp:LinkButton CssClass="mb-3" ID="LinkButton_ModificaPassword" PostBackUrl="#" runat="server" >Modifica Password</asp:LinkButton> <br />
+              <asp:LinkButton CssClass="mb-3" ID="LinkButton_ModificaPassword" PostBackUrl="#" runat="server" OnClick="LinkButton_ModificaPassword_Click" >Modifica Password</asp:LinkButton> <br />
+              <div id="modificapswBox" runat="server" class="d-flex flex-column align-items-center mt-1" Visible="false">
+                  <asp:TextBox ID="oldPassword" runat="server" CssClass="w-75 mt-1" placeholder="Inserisci la password attuale" ></asp:TextBox>
+                  <asp:Label ID="ErroreOldPsw" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                  <asp:TextBox ID="newPassword" runat="server" CssClass="w-75 mt-1" placeholder="Inserisci la nuova password"></asp:TextBox>
+                  <asp:Button ID="ModificaPwd" CssClass="w-50 mt-3 bg-black border rounded p-1 text-white" runat="server" OnClick="ModificaPwd_Click" Text="Invia"/>
+              </div>
+
+
+
               <asp:Button ID="Button_iTuoiOrdini" CssClass="btn btn-dark btn-rounded btn-lg mt-5 mb-2" OnClick="Button_iTuoiOrdini_Click" runat="server" Text="I tuoi ordini" /> <br />
 
               <asp:LinkButton OnClick="LinkButton_Logout_Click" CssClass="mt-3 " ID="LinkButton_Logout" PostBackUrl="#" runat="server" >Esci</asp:LinkButton> <br />
