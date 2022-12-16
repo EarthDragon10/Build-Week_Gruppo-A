@@ -365,6 +365,7 @@ namespace Build_Week_Gruppo_A.admin
                 CheckBox_EliminaCategoriaByName.Visible = true;
 
                 Button_AggiungiProdotto.Text = "Aggiungi Prodotto";
+                Button_ModificaProdotto.Text = "Modifica Prodotto";
             }
         }
 
@@ -403,6 +404,7 @@ namespace Build_Week_Gruppo_A.admin
                 CheckBox_AggiungiCategoria.Visible = true;
 
                 Button_AggiungiProdotto.Text = "Aggiungi Prodotto";
+                Button_ModificaProdotto.Text = "Modifica Prodotto";
 
             }
         }

@@ -9,12 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace Build_Week_Gruppo_A
 {
-    public partial class ClasseDettaglio : System.Web.UI.Page
+    public partial class DettagliOrdine : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
+                ClasseDettaglio.ListaDettagli.Clear();
                 int IdOrdine = Convert.ToInt32(Request.QueryString["IdOrdine"]);
                 SqlConnection connectionDB = new SqlConnection();
                 connectionDB.ConnectionString = ConfigurationManager.ConnectionStrings["ConnessioneDB_Musicalita"].ToString();
@@ -30,25 +31,23 @@ namespace Build_Week_Gruppo_A
                 {
                     while (reader.Read())
                     {
-                        ClasseDettaglio dettaglio= new ClasseDettaglio();
-                        ListaDettagli.Clear();
+                        ClasseDettaglio dettaglio = new ClasseDettaglio();
                         dettaglio.Marca = reader["Marca"].ToString();
                         dettaglio.Quantita = Convert.ToInt32(reader["Quantita"].ToString());
                         dettaglio.Totale = Convert.ToDecimal(reader["TotaleOrdine"].ToString());
                         dettaglio.Modello = reader["Modello"].ToString();
                         dettaglio.DataOrdine = Convert.ToDateTime(reader["DataOrdine"].ToString());
-                        ListaDettagli.Add(dettaglio);
+                        ClasseDettaglio.ListaDettagli.Add(dettaglio);
                     }
                 }
 
-                GridDettaglioOrdine.DataSource = ListaDettagli;
-                GridDettaglioOrdine.DataBind();
 
+                GridDettaglioOrdine.DataSource = ClasseDettaglio.ListaDettagli;
+                GridDettaglioOrdine.DataBind();
 
 
                 connectionDB.Close();
             }
-            
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Build_Week_Gruppo_A
         {
             Button DettaglioOrdine = (Button)sender;
             int IdOrdine = Convert.ToInt32(DettaglioOrdine.CommandArgument);
-            Response.Redirect($"DettaglioOrdine.aspx?IdOrdine={IdOrdine}");
+            Response.Redirect($"DettagliOrdine.aspx?IdOrdine={IdOrdine}");
         }
     }
 }

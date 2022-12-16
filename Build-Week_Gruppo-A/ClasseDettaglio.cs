@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Build_Week_Gruppo_A
 {
-    public partial class  DettaglioOrdine
+    public class  ClasseDettaglio
     {
         public string Marca { get; set; }
         public string Modello { get; set; }
@@ -13,6 +13,6 @@ namespace Build_Week_Gruppo_A
         public DateTime DataOrdine { get; set; }
         public decimal Totale { get; set; }
 
-        public static List<DettaglioOrdine> ListaDettagli = new List<DettaglioOrdine>();
+        public static List<ClasseDettaglio> ListaDettagli = new List<ClasseDettaglio>();
     }
 }
