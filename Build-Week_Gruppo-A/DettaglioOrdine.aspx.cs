@@ -31,19 +31,20 @@ namespace Build_Week_Gruppo_A
                     while (reader.Read())
                     {
                         ClasseDettaglio dettaglio= new ClasseDettaglio();
-                        ClasseDettaglio.ListaDettagli.Clear();
+                        ListaDettagli.Clear();
                         dettaglio.Marca = reader["Marca"].ToString();
                         dettaglio.Quantita = Convert.ToInt32(reader["Quantita"].ToString());
                         dettaglio.Totale = Convert.ToDecimal(reader["TotaleOrdine"].ToString());
                         dettaglio.Modello = reader["Modello"].ToString();
                         dettaglio.DataOrdine = Convert.ToDateTime(reader["DataOrdine"].ToString());
-                        ClasseDettaglio.ListaDettagli.Add(dettaglio);
+                        ListaDettagli.Add(dettaglio);
                     }
                 }
                 
                 
                 connectionDB.Close();
             }
+            
         }
     }
 }

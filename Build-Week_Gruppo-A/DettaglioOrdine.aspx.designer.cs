@@ -13,11 +13,11 @@ public partial class ClasseDettaglio
 {
 
     /// <summary>
-    /// Controllo Repeater_Dettagli.
+    /// Controllo GridDettaglioOrdine.
     /// </summary>
     /// <remarks>
     /// Campo generato automaticamente.
     /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Repeater Repeater_Dettagli;
+    protected global::System.Web.UI.WebControls.GridView GridDettaglioOrdine;
 }

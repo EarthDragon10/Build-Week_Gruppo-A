@@ -81,7 +81,7 @@ namespace Build_Week_Gruppo_A
 
         protected void Button_CercaChitarra_Click(object sender, EventArgs e)
         {
-            string url = $"../BarraDiRicerca.aspx?Marca={TextBox_CercaChitarra.Text}";
+            string url = $"/BarraDiRicerca.aspx?Marca={TextBox_CercaChitarra.Text}";
             Response.Redirect(url);
         }
 
