@@ -30,7 +30,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Quantita">
                     <ItemTemplate>
-                        <p></p>
+                        <p><%# Item.Quantita %></p>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

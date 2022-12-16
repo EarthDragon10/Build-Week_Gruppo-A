@@ -23,7 +23,13 @@ namespace Build_Week_Gruppo_A
             {
                 Label_BadgeCarrello.Visible = false;
             }
-                Label_CounterCarrello.Text = Prodotto.CarrelloUtente.Count.ToString();
+            int quantitaProdotti = 0;    
+            foreach(Prodotto item in Prodotto.CarrelloUtente)
+            {
+                quantitaProdotti += item.Quantita;
+            }
+            
+                Label_CounterCarrello.Text = quantitaProdotti.ToString();
                 Label_CounterCarrello.DataBind();
 
             if (!IsPostBack)
