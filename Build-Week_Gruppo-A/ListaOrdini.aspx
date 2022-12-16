@@ -5,7 +5,7 @@
 
     <div class="container">
 
-        <h1 class="text-center">I tuoi ordini</h1>
+        <h1 class="text-center bg-light rounded p-1">I tuoi ordini</h1>
         <asp:GridView ID="GridCarrello" CssClass="table table-bordered  table-striped table-light container-tabella " runat="server"
             AutoGenerateColumns="false" ItemType="Build_Week_Gruppo_A.Ordine" Visible="true">
             <Columns>
