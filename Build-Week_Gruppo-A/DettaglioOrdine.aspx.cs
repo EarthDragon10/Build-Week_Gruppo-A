@@ -40,8 +40,12 @@ namespace Build_Week_Gruppo_A
                         ListaDettagli.Add(dettaglio);
                     }
                 }
-                
-                
+
+                GridDettaglioOrdine.DataSource = ListaDettagli;
+                GridDettaglioOrdine.DataBind();
+
+
+
                 connectionDB.Close();
             }
             

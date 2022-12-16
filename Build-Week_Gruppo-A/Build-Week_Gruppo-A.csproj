@@ -164,9 +164,7 @@
       <DependentUpon>Carrello.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categoria.cs" />
-    <Compile Include="ClasseDettaglio.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
+    <Compile Include="ClasseDettaglio.cs" />
     <Compile Include="DettaglioOrdine.aspx.cs">
       <DependentUpon>DettaglioOrdine.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

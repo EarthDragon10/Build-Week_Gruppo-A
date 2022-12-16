@@ -15,7 +15,7 @@
         </asp:Repeater>--%>
 
          <div class="container ">
-        <asp:GridView ID="GridDettaglioOrdine" CssClass="table table-bordered  table-striped table-light container-tabella " runat="server"
+        <asp:GridView ID="GridCarrello" CssClass="table table-bordered  table-striped table-light container-tabella " runat="server"
             AutoGenerateColumns="false" ItemType="Build_Week_Gruppo_A.ClasseDettaglio" Visible="true">
             <Columns>
                 <asp:TemplateField HeaderText="Marca">
