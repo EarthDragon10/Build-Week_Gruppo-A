@@ -104,6 +104,7 @@ namespace Build_Week_Gruppo_A
                 command.CommandText = "INSERT INTO Ordine VALUES (@ID_Utente, @DataOrdine, @TotaleOrdine)";
                 command.Connection = connessioneDB;
 
+
                 int righeInteressate = command.ExecuteNonQuery();
 
                 if (righeInteressate > 0)
